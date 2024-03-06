@@ -1,0 +1,108 @@
+/* Global styles */
+body {
+    margin: 0;
+    padding: 0;
+    background-image: url('soldier.gif');
+    background-size: cover;
+    background-position: center;
+    font-family: 'Gloria Hallelujah', cursive;
+    height: 100vh; /* Set the height of the body to 100% of the viewport height */
+}
+
+.container {
+    width: 100%;
+    padding: 20px;
+    box-sizing: border-box;
+    text-align: center;
+    color: #ffffff;
+}
+
+h1 {
+    font-size: 2em;
+    margin-bottom: 20px;
+    color: #ff6600;
+}
+
+/* Dropdown styles */
+.dropdown {
+    position: fixed;
+    top: 20px;
+    right: 20px;
+}
+
+.dropbtn {
+    background-color: transparent;
+    color: white;
+    padding: 16px;
+    font-size: 16px;
+    border: none;
+    cursor: pointer;
+    border-radius: 8px;
+}
+
+.dropbtn:hover {
+    color: red;
+}
+
+.dropdown-content {
+    display: none;
+    position: fixed;
+    top: 60px; /* Adjust top position as needed */
+    right: 20px;
+    background-color: #f9f9f9;
+    min-width: 160px;
+    z-index: 1;
+    border-radius: 8px;
+    overflow-y: auto;
+    max-height: calc(100vh - 80px); /* Adjust height to fit within viewport */
+}
+
+.dropdown-content a {
+    color: black;
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+    border-radius: 8px;
+}
+
+.dropdown-content a:hover {
+    background-color: #ddd;
+}
+
+.dropdown:hover .dropdown-content {
+    display: block;
+}
+
+/* Arrow animation */
+.arrow-animation {
+    position: fixed;
+    top: 100px; /* Adjust top position as needed */
+    right: 30px;
+    animation: arrowFadeOut 2s forwards; /* Animation duration and fill mode */
+    color: red; /* Change text color to red */
+}
+
+@keyframes arrowFadeOut {
+    0% { opacity: 1; transform: translateY(0); }
+    90% { opacity: 1; transform: translateY(-20px); }
+    100% { opacity: 0; transform: translateY(-20px); }
+}
+
+/* Welcome message styles */
+.welcome-message {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+    color: white;
+    font-size: 24px;
+}
+
+.welcome-message p:first-child {
+    margin-bottom: 20px;
+}
+
+.welcome-message p:last-child {
+    font-style: italic;
+}
