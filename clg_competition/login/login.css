@@ -71,3 +71,32 @@ button:hover {
 .creepy-img button:hover {
     background-color: #ff9900;
 }
+@keyframes blood-burst-animation {
+    0% {
+      transform: translate(-50%, -50%) scale(1);
+      opacity: 1;
+    }
+    100% {
+      transform: translate(-50%, -50%) scale(10);
+      opacity: 0;
+    }
+  }
+  
+  .blood-burst-container {
+    width: 0;
+    height: 0;
+    pointer-events: none;
+  }
+  
+  .blood-burst {
+    position: absolute;
+  }
+
+  .bottom-text {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    color: teal; /* Red color for the text */
+    font-size: 16px;
+    z-index: 9999; /* Ensure the text is on top of other elements */
+}

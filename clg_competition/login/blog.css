@@ -1,6 +1,8 @@
 body {
     font-family: 'Gloria Hallelujah', cursive;
-    background-color: #1c1c1c;
+    background-image: url('skeleton.gif');
+    background-size: cover;
+    background-position: center;
     color: #ffffff;
     margin: 0;
     padding: 0;
