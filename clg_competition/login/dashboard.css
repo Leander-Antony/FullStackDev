@@ -25,7 +25,7 @@ h1 {
 
 /* Dropdown styles */
 .dropdown {
-    position: fixed;
+    position: absolute;
     top: 20px;
     right: 20px;
 }
@@ -46,9 +46,9 @@ h1 {
 
 .dropdown-content {
     display: none;
-    position: fixed;
-    top: 60px; /* Adjust top position as needed */
-    right: 20px;
+    position: absolute;
+    top: 35px; /* Adjust top position as needed */
+    right: 10px;
     background-color: #f9f9f9;
     min-width: 160px;
     z-index: 1;
@@ -75,9 +75,10 @@ h1 {
 
 /* Arrow animation */
 .arrow-animation {
-    position: fixed;
+    position: absolute;
     top: 100px; /* Adjust top position as needed */
     right: 30px;
+    z-index: 999;
     animation: arrowFadeOut 2s forwards; /* Animation duration and fill mode */
     color: red; /* Change text color to red */
 }
@@ -90,7 +91,7 @@ h1 {
 
 /* Welcome message styles */
 .welcome-message {
-    position: fixed;
+    position: absolute;
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
@@ -105,6 +106,18 @@ h1 {
 
 .welcome-message p:last-child {
     font-style: italic;
+}
+
+/* Responsive styles */
+@media only screen and (max-width: 600px) {
+    .dropdown,
+    .arrow-animation {
+        display: none; /* Hide dropdown and arrow on small screens */
+    }
+
+    .welcome-message {
+        font-size: 18px; /* Adjust font size of welcome message for smaller screens */
+    }
 }
 @keyframes blood-burst-animation {
     0% {
@@ -126,4 +139,3 @@ h1 {
   .blood-burst {
     position: absolute;
   }
-  

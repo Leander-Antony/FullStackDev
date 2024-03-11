@@ -103,4 +103,4 @@ document.addEventListener('click', function(e) {
       bloodBurstContainer.remove();
     }, 1000);
   });
-  
+

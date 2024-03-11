@@ -20,15 +20,14 @@ h1 {
 
 .blogs {
     display: grid;
-    grid-template-columns: repeat(1, 1fr);
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); /* Adjust grid columns dynamically */
     grid-gap: 20px;
 }
 
 .blog {
-    background-color: #333333;
     padding: 20px;
     border-radius: 8px;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+    box-shadow: 0 0 10px rgba(0, 0, 0, 125);
 }
 
 .blog h2 {
@@ -47,4 +46,19 @@ button {
 
 button:hover {
     background-color: #ff9900;
+}
+
+/* Responsive styles */
+@media only screen and (max-width: 600px) {
+    .container {
+        padding: 10px; /* Adjust padding for smaller screens */
+    }
+
+    .blogs {
+        grid-template-columns: 1fr; /* Display blogs in a single column on smaller screens */
+    }
+
+    button {
+        width: 100%; /* Make buttons full-width on smaller screens */
+    }
 }

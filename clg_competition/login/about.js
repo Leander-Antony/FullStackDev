@@ -5,7 +5,7 @@ function showSpookyText(event) {
     spookyText.style.position = "fixed"; // Change position to fixed to cover the whole viewport
     spookyText.style.top = (event.clientY + 10) + "px";
     spookyText.style.left = (event.clientX - 50) + "px"
-    spookyText.style.color = " #880808";
+    spookyText.style.color = "red";
     spookyText.style.fontFamily = "'Gloria Hallelujah', cursive";
     spookyText.style.fontSize = "54px";
     spookyText.style.zIndex = "9999";
