@@ -1,0 +1,128 @@
+body {
+  font-family: 'Gloria Hallelujah', cursive;
+  background-image: url('shadows.gif');
+  background-size: cover;
+  color: #ffffff;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  overflow: hidden;
+}
+
+.container {
+  position: relative;
+  z-index: 2; /* Ensure login form is above the creepy image */
+}
+
+.login-form {
+  text-align: center;
+}
+
+button {
+  background-color: #ff6600;
+  color: #ffffff;
+  cursor: pointer;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 4px;
+  margin-top: 20px;
+}
+
+button:hover {
+  background-color: #ff9900;
+}
+
+.creepy-img {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.9);
+  background-image: url("creepy_image.jpeg");
+  background-size: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  z-index: 1; /* Ensure the creepy image is above the login form */
+}
+
+.creepy-img p {
+  font-size: 1.5em;
+  margin: 0;
+  padding: 0 20px; /* Add padding to the text for spacing */
+  text-align: center;
+}
+
+.creepy-img button {
+  background-color: #ff6600;
+  color: #ffffff;
+  cursor: pointer;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 4px;
+  margin-top: 20px;
+}
+
+.creepy-img button:hover {
+  background-color: #ff9900;
+}
+
+.bottom-text {
+  position: fixed;
+  top: 20px;
+  left: 20px;
+  color: rgb(252, 0, 0); /* Red color for the text */
+  font-size: 20px;
+  z-index: 9999; /* Ensure the text is on top of other elements */
+}
+
+/* Responsive styles */
+@media only screen and (max-width: 600px) {
+  .container {
+      width: 90%; /* Adjust container width for smaller screens */
+  }
+
+  .creepy-img p {
+      font-size: 1em; /* Decrease font size for smaller screens */
+  }
+}
+@keyframes blood-burst-animation {
+  0% {
+    transform: translate(-50%, -50%) scale(1);
+    opacity: 1;
+  }
+  100% {
+    transform: translate(-50%, -50%) scale(10);
+    opacity: 0;
+  }
+}
+
+.blood-burst-container {
+  width: 0;
+  height: 0;
+  pointer-events: none;
+}
+
+.blood-burst {
+  position: absolute;
+}
+
+
+/* Add this CSS to your existing login.css file */
+
+@media only screen and (max-width: 600px) {
+  .creepy-img {
+    background-image: url('devil.jpg');
+  }
+}
+
+@media only screen and (min-width: 601px) {
+  .creepy-img {
+    background-image: url('creepy_image.jpeg');
+  }
+}
