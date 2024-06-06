@@ -1,28 +1,34 @@
 // Array of objects containing blog details
 const blogsData = [
     {
-        title: "Blog 1: Creepy Story 1",
-        content: "Paragraph 1 of the creepy blog 1... Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed ut odio eu magna semper finibus. ",
+        title: "A Trusting the Journey: Why Unexpected Turns Can Be Blessings",
+        content: "Life loves throwing us off course. We meticulously plan our vacations, careers, and even our grocery lists, only to have fate chuck a detour our way...",
+        url: "https://medium.com/@LeanderAntony/a-trusting-the-journey-why-unexpected-turns-can-be-blessings-47b288e5e377"
     },
     {
-        title: "Blog 2: Creepy Story 2",
-        content: "Paragraph 1 of the creepy blog 2... Phasellus sit amet lectus vitae elit aliquam fermentum. Integer nec lobortis est. ",
+        title: "You don’t need anyone. Just focus on yourself. Really?",
+        content: "Remember Tom Hanks in “Cast Away,” befriending a volleyball named Wilson? Hilarious, right? But even the most self-sufficient guy stranded on a desert island eventually craved human connection...",
+        url: "https://medium.com/@LeanderAntony/you-dont-need-anyone-just-focus-on-yourself-really-a71d0918c99e"
     },
     {
-        title: "Blog 3: Creepy Story 3",
-        content: "Paragraph 1 of the creepy blog 3... Fusce sit amet fermentum orci. In consectetur nunc at turpis gravida, eu placerat lorem tempus. ",
+        title: "What If Our Life Was a Game? (Spoiler: It Kinda Is)",
+        content: "Ever think life is like a big video game? We follow these unwritten rules, like waiting in line and saying “bless you” when someone sneezes (unless you’re a rebel in socks and sandals)...",
+        url: "https://medium.com/@LeanderAntony/what-if-our-life-was-a-game-spoiler-it-kinda-is-e8d3f93cef5f"
     },
     {
-        title: "Blog 4: Creepy Story 4",
-        content: "Paragraph 1 of the creepy blog 4... Duis vestibulum mauris id arcu ultrices, a cursus dolor lobortis. Sed eu diam ut magna volutpat tempor. ",
+        title: "Breaking the Chains of Procrastination.",
+        content: "Are you familiar with the phrases “I will do it when the time comes” or “I will do it when the time is right”? These expressions often serve as masks for procrastination, disguising the underlying fear of leaving our comfort zones.",
+        url: "https://medium.com/@LeanderAntony/breaking-the-chains-of-procrastination-embrace-discomfort-to-pursue-your-dreams-dd27abd61e0d?source=user_profile---------5----------------------------"
     },
     {
-        title: "Blog 5: Creepy Story 5",
-        content: "Paragraph 1 of the creepy blog 5... Vivamus laoreet velit vel tortor facilisis suscipit. Integer id tortor sollicitudin, varius odio id, placerat eros. ",
+        title: "From Loneliness to Fulfillment: Applying Stoic Philosophy to Personal Growth",
+        content: "I used to be a loner, even though I craved attention from others. My friends just didn’t seem interested, and I often felt ignored. Even by the end of school, I was still alone...",
+        url: "https://medium.com/@LeanderAntony/from-loneliness-to-fulfillment-applying-stoic-philosophy-to-personal-growth-2b378127c3a3"
     },
     {
-        title: "Blog 6: Creepy Story 6",
-        content: "Paragraph 1 of the creepy blog 6... Proin vulputate, elit eu tincidunt scelerisque, arcu risus hendrerit elit, vel elementum justo neque non velit. ",
+        title: "Make Data Work for You: A Beginner’s Guide to Power BI Data Modeling",
+        content: "When Excel gets cramped by your growing data, Power BI swoops in as a superhero of data organization. But before creating stunning reports, data modeling, the act of tidying your data for analysis, is key...",
+        url: "https://medium.com/@LeanderAntony/make-data-work-for-you-a-beginners-guide-to-power-bi-data-modeling-314e21a6a525"
     }
 ];
 
@@ -35,7 +41,13 @@ function createBlogElements() {
         blogDiv.classList.add("blog");
 
         const titleElement = document.createElement("h2");
-        titleElement.textContent = blog.title;
+        const titleLink = document.createElement("a");
+        titleLink.textContent = blog.title;
+        titleLink.href = blog.url;
+        titleLink.target = "_blank";
+        titleLink.style.color = "inherit";
+        titleLink.style.textDecoration = "none";
+        titleElement.appendChild(titleLink);
 
         const contentElement = document.createElement("p");
         contentElement.innerHTML = blog.content; // Using innerHTML to render HTML content
@@ -54,6 +66,7 @@ createBlogElements();
 document.getElementById("backToDashboard").addEventListener("click", function() {
     window.location.href = "dashboard.html"; // Redirect to dashboard.html
 });
+
 // Function to show spooky text on hover
 function showSpookyText(event) {
     var spookyText = document.createElement("div");
@@ -75,4 +88,3 @@ function showSpookyText(event) {
 
 // Add event listener to document to trigger showSpookyText function on hover
 document.addEventListener('mousemove', showSpookyText);
-
