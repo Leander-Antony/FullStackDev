@@ -1,8 +1,9 @@
 // Array of objects containing project details
 const projectsData = [
     {
-        title: "Project 1: The Salem Witch Trials",
-        description: "The Salem witch trials were a series of hearings and prosecutions of people accused of witchcraft in colonial Massachusetts between February 1692 and May 1693. The trials resulted in the executions of twenty people, most of them women, and the imprisonment of many others.",
+        title: "Spam or ham classifier",
+        description: "This project uses Python with scikit-learn, pandas, NLTK, and NumPy to create a basic SMS classifier. It categorizes text messages into predefined groups as Spam or not Spam.",
+        link: "https://sms-classsifier.streamlit.app/"
     },
     {
         title: "Project 2: The Black Death",
@@ -43,37 +44,46 @@ function createProjectElements() {
         projectDiv.appendChild(titleElement);
         projectDiv.appendChild(descriptionElement);
 
+        // If the project has a link, create an anchor element
+        if (project.link) {
+            const linkElement = document.createElement("a");
+            linkElement.href = project.link;
+            linkElement.textContent = "View Project";
+            linkElement.target = "_blank"; // Open link in a new tab
+            projectDiv.appendChild(linkElement);
+        }
+
         projectsContainer.appendChild(projectDiv);
     });
 }
 
-// Call the function to create project elements
-createProjectElements();
+// Call the function to create project elements when the page loads
+document.addEventListener("DOMContentLoaded", function() {
+    createProjectElements();
 
+    // Add event listener for back to dashboard button
+    document.getElementById("backToDashboard").addEventListener("click", function() {
+        window.location.href = "dashboard.html"; // Redirect to dashboard.html
+    });
 
-// Add event listener for back to dashboard button
-document.getElementById("backToDashboard").addEventListener("click", function() {
-    window.location.href = "dashboard.html"; // Redirect to dashboard.html
+    // Function to show spooky text on hover
+    function showSpookyText(event) {
+        var spookyText = document.createElement("div");
+        spookyText.textContent = ".";
+        spookyText.style.position = "fixed";
+        spookyText.style.top = (event.clientY + 10) + "px";
+        spookyText.style.left = (event.clientX - 50) + "px";
+        spookyText.style.color = 'red';
+        spookyText.style.fontFamily = "'Gloria Hallelujah', cursive";
+        spookyText.style.fontSize = "54px";
+        spookyText.style.zIndex = "9999";
+        document.body.appendChild(spookyText);
+
+        setTimeout(function() {
+            spookyText.remove();
+        }, 1000); // Remove after 1 second
+    }
+
+    // Add event listener to document to trigger showSpookyText function on hover
+    document.addEventListener('mousemove', showSpookyText);
 });
-// Function to show spooky text on hover
-function showSpookyText(event) {
-    var spookyText = document.createElement("div");
-    spookyText.textContent = ".";
-    spookyText.style.position = "fixed"; // Change position to fixed to cover the whole viewport
-    spookyText.style.top = (event.clientY + 10) + "px";
-    spookyText.style.left = (event.clientX - 50) + "px"
-    spookyText.style.color = 'red';
-    spookyText.style.fontFamily = "'Gloria Hallelujah', cursive";
-    spookyText.style.fontSize = "54px";
-    spookyText.style.zIndex = "9999";
-    document.body.appendChild(spookyText); // Append to body instead of .container
-
-    // Remove spooky text after a short delay
-    setTimeout(function() {
-        spookyText.remove();
-    }, 1000); // Remove after 1 second
-}
-// Add event listener to document to trigger showSpookyText function on hover
-document.addEventListener('mousemove', showSpookyText);
-
-
