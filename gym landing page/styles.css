@@ -10,13 +10,13 @@ body {
     font-family: Arial, sans-serif;
     line-height: 1.6;
     background-color: #000; /* Changed background color to black */
-    color: #fff; /* Set default text color to white */
+    
     padding: 20px;
     overflow-x: hidden; /* Hide horizontal overflow */
 }
 
 header {
-    
+    background-color: #333;
     padding: 10px 0;
     text-align: center;
 }
@@ -27,7 +27,13 @@ header {
     align-items: center;
     padding: 0 20px;
     background-color: rgba(0, 194, 255, 0.32); /* Color with opacity */
-    
+    border-top: 2px solid rgba(0, 194, 255, 1); /* Border with full opacity */
+    border-bottom: 2px solid rgba(0, 194, 255, 1); /* Border with full opacity */
+    position: fixed;
+    width: 100%;
+    top: 0;
+    left: 0;
+    z-index: 1000;
 }
 
 .navbar-left {
@@ -36,7 +42,7 @@ header {
 }
 
 .navbar-left img {
-    width: 100%; /* Adjust size as needed */
+    width: 40px; /* Adjust size as needed */
     height: 40px; /* Adjust size as needed */
     margin-right: 10px;
 }
@@ -65,13 +71,10 @@ header {
     text-decoration: underline;
 }
 
-
-
-
 .section {
     width: 100vw; /* Full viewport width */
     height: 100vh; /* Full viewport height */
-    background-color: #fff;
+    
     padding: 20px;
     margin: 20px auto;
     border-radius: 5px;
@@ -123,4 +126,28 @@ header {
     background-color: #00c2ff;
     color: #fff;
 }
+
+/* Scroll to Top Button */
+#scrollToTopBtn {
+    display: none; /* Hidden by default */
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    z-index: 99;
+    border: none;
+    outline: none;
+    background-color: #00c2ff;
+    color: white;
+    cursor: pointer;
+    padding: 15px;
+    border-radius: 50%;
+    font-size: 18px;
+    opacity: 0.7;
+}
+
+#scrollToTopBtn:hover {
+    background-color: #555;
+    opacity: 1;
+}
+
 
