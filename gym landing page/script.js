@@ -121,3 +121,22 @@ document.addEventListener('DOMContentLoaded', function() {
     updateVisibility();
     updateButtons();
 });
+
+document.addEventListener('DOMContentLoaded', function() {
+    const gearsContainer = document.querySelector('.gears-container');
+    const gearItems = document.querySelectorAll('.gear-item');
+
+    let gearIndex = 0;
+
+    gearsContainer.addEventListener('mouseover', (e) => {
+        const currentGear = gearItems[gearIndex];
+        currentGear.style.transform = 'translateY(100%)';
+        
+        gearIndex = (gearIndex + 1) % gearItems.length;
+        const nextGear = gearItems[gearIndex];
+        setTimeout(() => {
+            nextGear.style.transform = 'none';
+        }, 300); // Adjust timing to match CSS transition duration
+    });
+});
+
