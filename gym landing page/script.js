@@ -122,21 +122,24 @@ document.addEventListener('DOMContentLoaded', function() {
     updateButtons();
 });
 
+
+
 document.addEventListener('DOMContentLoaded', function() {
     const gearsContainer = document.querySelector('.gears-container');
     const gearItems = document.querySelectorAll('.gear-item');
 
-    let gearIndex = 0;
+    gearItems.forEach((item, index) => {
+        item.addEventListener('mouseenter', () => {
+            item.classList.add('hovered'); // Add class to bring item to top
+            setTimeout(() => {
+                gearsContainer.appendChild(item); // Move hovered item to the end of container after a short delay
+            }, 300); // Adjust delay time as needed
+        });
 
-    gearsContainer.addEventListener('mouseover', (e) => {
-        const currentGear = gearItems[gearIndex];
-        currentGear.style.transform = 'translateY(100%)';
-        
-        gearIndex = (gearIndex + 1) % gearItems.length;
-        const nextGear = gearItems[gearIndex];
-        setTimeout(() => {
-            nextGear.style.transform = 'none';
-        }, 300); // Adjust timing to match CSS transition duration
+        item.addEventListener('mouseleave', () => {
+            item.classList.remove('hovered'); // Remove class on mouse leave
+        });
     });
 });
+
 
