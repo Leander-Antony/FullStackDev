@@ -1,10 +1,12 @@
 document.addEventListener('DOMContentLoaded', function() {
     const scrollToTopBtn = document.getElementById('scrollToTopBtn');
     const sections = document.querySelectorAll('.section');
+    const navbar = document.getElementById('navbar'); // Added navbar reference
 
     window.onscroll = function() {
         scrollFunction();
         revealSections();
+        hideNavbar(); // Call hideNavbar function on scroll
     };
 
     function scrollFunction() {
@@ -33,6 +35,18 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     }
 
+    // Function to hide navbar after the package section appears
+    function hideNavbar() {
+        const packageSection = document.getElementById('package');
+
+        // Check if package section is visible
+        if (packageSection && packageSection.classList.contains('visible')) {
+            navbar.style.display = 'none'; // Hide the navbar
+        } else {
+            navbar.style.display = 'block'; // Show the navbar
+        }
+    }
+
     // Mouse movement effect on register button
     const btnRegister = document.querySelector('.btn-register');
     if (btnRegister) {
@@ -44,9 +58,8 @@ document.addEventListener('DOMContentLoaded', function() {
             btnRegister.style.setProperty('--y', `${y}px`);
         });
     }
-});
 
-document.addEventListener('DOMContentLoaded', function() {
+    // Trainer carousel functionality (assumed to be part of your existing script)
     const trainersContainer = document.querySelector('.trainers-container');
     const trainers = document.querySelector('.trainers');
     const prevBtn = document.querySelector('.prev-btn');
@@ -58,7 +71,6 @@ document.addEventListener('DOMContentLoaded', function() {
     let currentScroll = 0;
     let visibleCards = numVisibleCards;
 
-    // Hide or show trainer cards based on visibility count
     function updateVisibility() {
         trainerCards.forEach((card, index) => {
             if (index < visibleCards) {
@@ -69,7 +81,6 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     }
 
-    // Show or hide navigation buttons based on visibility count
     function updateButtons() {
         if (visibleCards <= numVisibleCards) {
             prevBtn.style.display = 'none';
@@ -84,7 +95,6 @@ document.addEventListener('DOMContentLoaded', function() {
         }
     }
 
-    // Scroll trainers to the left
     function scrollLeft() {
         if (visibleCards > numVisibleCards) {
             visibleCards--;
@@ -95,7 +105,6 @@ document.addEventListener('DOMContentLoaded', function() {
         }
     }
 
-    // Scroll trainers to the right
     function scrollRight() {
         if (visibleCards < totalCards) {
             visibleCards++;
@@ -106,13 +115,9 @@ document.addEventListener('DOMContentLoaded', function() {
         }
     }
 
-    // Add event listeners for scroll buttons
     prevBtn.addEventListener('click', scrollLeft);
     nextBtn.addEventListener('click', scrollRight);
 
-    // Initialize visibility based on initial state
     updateVisibility();
     updateButtons();
 });
-
-
