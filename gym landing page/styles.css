@@ -31,6 +31,12 @@ header {
 .h2 {
     text-align: center;
 }
+
+h2, h3{
+    background: linear-gradient(white, #00C2FF);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
 /* Navbar Section */
 /* Navbar Section */
 .navbar {
@@ -56,8 +62,8 @@ header {
 }
 
 .navbar-left img {
-    width: 40px;
-    height: 40px;
+    width: 30px;
+    height: 30px;
     margin-right: 10px;
 }
 
@@ -276,9 +282,10 @@ header {
 /* Package Section */
 .packages {
     display: flex;
-    justify-content: space-around;
+    justify-content: center;
     flex-wrap: wrap;
-    padding: 20px;
+    height: auto;
+    padding: 10px;
 }
 
 .package-card {
@@ -287,6 +294,7 @@ header {
     width: 300px; /* Adjust width as needed */
     padding: 20px;
     margin: 10px;
+    margin-top: 10%;
     border-radius: 5px;
     transition: transform 0.3s ease-out;
 }
@@ -350,6 +358,8 @@ header {
     justify-content: center;
     position: relative;
     width: 80%;
+    height: auto;
+    
     margin: 0 auto;
 }
 
@@ -357,6 +367,7 @@ header {
     overflow: hidden;
     display: flex;
     justify-content: center;
+    margin-top: 5%;
     width: 100%;
 }
 
@@ -380,6 +391,7 @@ header {
     flex-direction: column;
     justify-content: space-between;
 }
+
 
 .trainer-img {
     width: 100%;
@@ -491,6 +503,7 @@ header {
     color: #00c2ff; /* Text color */
     padding: 20px;
     margin: 20px auto;
+    height: auto;
     border-radius: 5px;
     box-shadow: 0 0 10px rgba(0,0,0,0.1);
     text-align: center; /* Center align content */
@@ -516,6 +529,10 @@ header {
     border-radius: 5px;
     text-align: center;
     width: 300px; /* Adjusted width for better readability */
+}
+
+.timing-card:hover {
+    transform: scale(1.05); /* Scale up on hover */
 }
 
 .timing-card h3 {
@@ -566,38 +583,43 @@ header {
     background-color: #000; /* Background color */
     color: #00c2ff; /* Text color */
     padding: 20px;
+    height: auto;
     margin: 20px auto;
-    border-radius: 5px;
+    margin-top: auto;
+    overflow-x: auto; /* Enable horizontal scrolling */
     box-shadow: 0 0 10px rgba(0,0,0,0.1);
     text-align: center; /* Center align content */
 }
 
 .offers-grid {
     display: flex;
+    justify-content: space-around;
     flex-wrap: wrap;
-    justify-content: center;
-    gap: 20px;
-    margin-top: 20px;
+    padding: 20px;
 }
 
 .offer-card {
     display: flex;
     flex-direction: column; /* Arrange cards vertically */
     width: 100%; /* Full width for responsiveness */
-    max-width: 500px; /* Adjust maximum width as per your design */
+    height: 100%;
+    max-width: 450px; /* Adjust maximum width as per your design */
     background-color: rgba(0, 194, 255, 0.32); /* Card background color with opacity */
     border: 2px solid rgba(0, 194, 255, 1); /* Card border with full opacity */
     border-radius: 5px;
-    padding: 20px;
+    padding: 10px;
     box-sizing: border-box;
-    margin-bottom: 20px; /* Add margin between cards */
+}
+
+.offer-card:hover {
+    transform: scale(1.05); /* Scale up on hover */
 }
 
 .offer-img {
     width: 100%; /* Adjust image width */
     height: 250px; /* Maintain aspect ratio */
     border-radius: 5px;
-    margin-top: 20px; /* Add margin for spacing */
+    margin-top: 5px; /* Add margin for spacing */
 }
 
 .offer-text {
@@ -625,6 +647,7 @@ header {
     background-color: #000; /* Black background */
     color: #fff; /* Text color */
     padding: 50px 0;
+    height: auto;
     text-align: center;
 }
 
@@ -633,8 +656,8 @@ header {
     justify-content: center;
     align-items: center;
     gap: 20px;
-    margin-top: 20px;
-    overflow: hidden; /* Hide overflow to contain items */
+    margin-top: 70px;
+    overflow: auto; /* Enable horizontal scrolling on mobile */
     position: relative;
 }
 
@@ -655,6 +678,38 @@ header {
     transform: scale(1); /* Initial scale */
 }
 
+/* Adjust number of items shown based on screen size */
+@media (max-width: 768px) {
+    .gears-container {
+        flex-wrap: wrap; /* Ensure items stay in a single row */
+        justify-content: space-around; /* Center align items horizontally */
+    }
+
+    .gear-item {
+        width: calc(50% - 10px); /* Two items per row with gap */
+        max-width: 450px; /* Adjusted maximum width */
+    }
+}
+
+@media (min-width: 780px) {
+    .gears-container {
+        justify-content: center; /* Center align items horizontally */
+    }
+
+    .gear-item {
+        width: calc(33.33% - 20px); /* Three items per row with gap */
+        max-width: 300px; /* Adjusted maximum width */
+    }
+}
+
+/* Adjust hover effect for mobile */
+@media (hover: none) {
+    .gear-item:hover img {
+        transform: scale(1); /* Keep default scale */
+        opacity: 1; /* Maintain full opacity */
+    }
+}
+
 .gear-item.hovered img {
     transform: scale(1.1); /* Scale up on hover */
     opacity: 0.8; /* Reduce opacity slightly on hover */
@@ -667,6 +722,7 @@ header {
 .gear-item:nth-child(n+4) {
     display: none; /* Initially hide all items beyond the third */
 }
+
 
 
 
@@ -741,6 +797,11 @@ header {
     margin-top: 20px;
     text-align: center;
     font-size: 0.9rem;
+}
+
+.footer-img img {
+    width: 40px; /* Adjust the width of the images */
+    height: auto; /* Maintain aspect ratio */
 }
 
 .footer-bottom p {

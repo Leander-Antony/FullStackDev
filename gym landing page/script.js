@@ -141,6 +141,18 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     });
 });
+document.addEventListener('DOMContentLoaded', function() {
+    const gearsContainer = document.querySelector('.gears-container');
+    const gearItems = document.querySelectorAll('.gear-item');
+
+    gearItems.forEach((item, index) => {
+        item.addEventListener('click', () => {
+            // Toggle 'hovered' class on click for mobile devices
+            item.classList.toggle('hovered');
+        });
+    });
+});
+
 
 function scrollTrainers(direction) {
     const trainersContainer = document.querySelector('.trainers-container');
