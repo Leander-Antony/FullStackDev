@@ -311,6 +311,38 @@ header {
     color: #00c2ff;
 }
 
+/* Responsive styling */
+@media (max-width: 768px) {
+    .packages {
+        display: flex;
+        flex-wrap: nowrap; /* Prevent wrapping */
+        overflow-x: auto; /* Enable horizontal scrolling */
+        padding: 10px;
+    }
+
+    .package-card {
+        flex: 0 0 auto; /* Prevent flex items from shrinking or growing */
+        width: 250px; /* Adjust width for small screens */
+        margin: 10px; /* Adjust margin for small screens */
+    }
+}
+
+@media (max-width: 480px) {
+    .package-card {
+        width: 220px; /* Adjust width for very small screens */
+        padding: 10px; /* Reduce padding for small screens */
+    }
+
+    .package-card h3 {
+        font-size: 1.2rem; /* Smaller font size for small screens */
+    }
+
+    .package-card ul li {
+        font-size: 1rem; /* Smaller font size for small screens */
+    }
+}
+
+
 /* Add styles for trainers section */
 .trainer-wrapper {
     
