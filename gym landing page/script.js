@@ -142,4 +142,33 @@ document.addEventListener('DOMContentLoaded', function() {
     });
 });
 
+function scrollTrainers(direction) {
+    const trainersContainer = document.querySelector('.trainers-container');
+    const scrollAmount = trainersContainer.clientWidth; // Amount to scroll
 
+    trainersContainer.scrollBy({
+        left: direction * scrollAmount,
+        behavior: 'smooth'
+    });
+}
+
+// Optional: Add event listeners to hide buttons when not needed
+document.addEventListener('DOMContentLoaded', () => {
+    const trainersContainer = document.querySelector('.trainers-container');
+    const prevBtn = document.querySelector('.prev-btn');
+    const nextBtn = document.querySelector('.next-btn');
+
+    trainersContainer.addEventListener('scroll', () => {
+        if (trainersContainer.scrollLeft === 0) {
+            prevBtn.classList.add('no-scroll-left');
+        } else {
+            prevBtn.classList.remove('no-scroll-left');
+        }
+
+        if (trainersContainer.scrollWidth - trainersContainer.scrollLeft === trainersContainer.clientWidth) {
+            nextBtn.classList.add('no-scroll-right');
+        } else {
+            nextBtn.classList.remove('no-scroll-right');
+        }
+    });
+});
