@@ -54,8 +54,8 @@ document.addEventListener('DOMContentLoaded', function() {
             const x = e.clientX - btnRegister.getBoundingClientRect().left;
             const y = e.clientY - btnRegister.getBoundingClientRect().top;
             
-            btnRegister.style.setProperty('--x', `${x}px`);
-            btnRegister.style.setProperty('--y', `${y}px`);
+            btnRegister.style.setProperty('--x', `₹{x}px`);
+            btnRegister.style.setProperty('--y', `₹{y}px`);
         });
     }
 
@@ -99,7 +99,7 @@ document.addEventListener('DOMContentLoaded', function() {
         if (visibleCards > numVisibleCards) {
             visibleCards--;
             currentScroll = Math.max(currentScroll - cardWidth, 0);
-            trainers.style.transform = `translateX(-${currentScroll}px)`;
+            trainers.style.transform = `translateX(-₹{currentScroll}px)`;
             updateVisibility();
             updateButtons();
         }
@@ -109,7 +109,7 @@ document.addEventListener('DOMContentLoaded', function() {
         if (visibleCards < totalCards) {
             visibleCards++;
             currentScroll = Math.min(currentScroll + cardWidth, (totalCards - numVisibleCards) * cardWidth);
-            trainers.style.transform = `translateX(-${currentScroll}px)`;
+            trainers.style.transform = `translateX(-₹{currentScroll}px)`;
             updateVisibility();
             updateButtons();
         }
@@ -228,7 +228,7 @@ paymentForm.addEventListener('submit', (event) => {
 function updateTotalAmount(productPrice) {
     const quantity = parseInt(popupQuantityInput.value);
     const totalAmount = productPrice * quantity;
-    popupTotalAmount.textContent = ` ${totalAmount.toFixed(2)}`;
+    popupTotalAmount.textContent = `₹ ${totalAmount.toFixed(2)}`;
 }
 
 // Close payment popup function
@@ -247,8 +247,108 @@ function closeMaintenancePopup() {
 }
 
 
+function updateTrainerImage() {
+    var trainerSelect = document.getElementById("registration-trainer");
+    var selectedTrainer = trainerSelect.value;
 
+    // Hide all trainer images
+    var trainerImages = document.querySelectorAll(".trainer-image");
+    trainerImages.forEach(function(img) {
+        img.style.display = "none";
+    });
 
+    // Show the selected trainer's image
+    var selectedImage = document.getElementById("img-" + selectedTrainer);
+    if (selectedImage) {
+        selectedImage.style.display = "block";
+    }
+}
+
+// Function to calculate total amount based on selections
+function calculateTotal() {
+    var packageSelect = document.getElementById("registration-package");
+    var packageCost = {
+        "Basic": 1000,
+        "Standard": 1500,
+        "Premium": 2000,
+        "VIP": 2500
+    };
+
+    var selectedPackage = packageSelect.value;
+    var totalAmount = packageCost[selectedPackage] || 0;
+
+    // Additional costs for offers and supplements
+    var offer1 = document.getElementById("offer1").checked;
+    var offer2 = document.getElementById("offer2").checked;
+    var supplement1 = document.getElementById("supplement1").checked;
+    var supplement2 = document.getElementById("supplement2").checked;
+    var supplement3 = document.getElementById("supplement3").checked;
+
+    var offerCost = 0;
+    var supplementCost = 0;
+
+    if (offer1) offerCost += 999;
+    if (offer2) offerCost += 1999;
+
+    if (supplement1) supplementCost += 2499;
+    if (supplement2) supplementCost += 5999;
+    if (supplement3) supplementCost += 3499;
+
+    totalAmount += offerCost + supplementCost;
+
+    document.getElementById("totalAmount").innerText = "₹" + totalAmount;
+}
+
+// Function to validate form before submission
+function validateForm() {
+    var name = document.getElementById("registration-name").value.trim();
+    var phone = document.getElementById("registration-phone").value.trim();
+    var package = document.getElementById("registration-package").value;
+    var trainer = document.getElementById("registration-trainer").value;
+    var timing = document.querySelector('input[name="timing"]:checked');
+    var offer1 = document.getElementById("offer1").checked || document.getElementById("offer2").checked;
+    var supplement1 = document.getElementById("supplement1").checked || document.getElementById("supplement2").checked || document.getElementById("supplement3").checked;
+
+    if (name === "" || phone === "" || package === "" || trainer === "" || !timing ) {
+        alert("Please fill in all required fields.");
+        return false;
+    }
+
+    return true;
+}
+
+// Function to open registration popup
+function openRegistrationPopup() {
+    document.getElementById("registrationPopup").style.display = "block";
+}
+
+// Function to close registration popup
+function closeRegistrationPopup() {
+    document.getElementById("registrationPopup").style.display = "none";
+}
+
+// Function to submit form and show confirmation popup
+function submitForm() {
+    if (validateForm()) {
+        closeRegistrationPopup();
+        document.getElementById("confirmationPopup").style.display = "block";
+    }
+}
+
+// Function to close confirmation popup
+function closeConfirmationPopup() {
+    document.getElementById("confirmationPopup").style.display = "none";
+}
+
+// Event listeners for form elements to recalculate total amount
+document.getElementById("registration-package").addEventListener("change", calculateTotal);
+document.getElementById("registration-trainer").addEventListener("change", updateTrainerImage);
+document.getElementById("registration-trainer").addEventListener("change", calculateTotal);
+document.getElementById("offer1").addEventListener("change", calculateTotal);
+document.getElementById("offer2").addEventListener("change", calculateTotal);
+document.getElementById("supplement1").addEventListener("change", calculateTotal);
+document.getElementById("supplement2").addEventListener("change", calculateTotal);
+document.getElementById("supplement3").addEventListener("change", calculateTotal);
 
 
 
