@@ -17,8 +17,8 @@
             <div class="navbar-right">
                 <ul>
                     <li><a href="#intro">Intro</a></li>
-                    <li><a href="#package">Package</a></li>
-                    <li><a href="#trainer">Trainer</a></li>
+                    <li><a href="#packages">Packages</a></li>
+                    <li><a href="#trainers">Trainers</a></li>
                     <li><a href="#timings">Timings</a></li>
                     <li><a href="#offers">Offers</a></li>
                     <li><a href="#gears">Gears</a></li>
@@ -35,9 +35,18 @@
             <a href="#" class="btn-register">Register Now</a>
         </div>
     </div>
+
     
-    <div id="package" class="section hidden">
-        <h2 class="h2">Package Section</h2>
+    
+
+    
+    
+    
+    
+    
+    
+    <div id="packages" class="section hidden">
+        <h2 class="h2">Packages</h2>
         <div class="packages">
             <div class="package-card">
                 <h3>Basic Membership</h3>
@@ -78,8 +87,8 @@
         </div>
     </div>
     
-    <div id="trainer" class="section">
-        <h2 class="h2">Trainer Section</h2>
+    <div id="trainers" class="section">
+        <h2 class="h2">Our Trainers</h2>
         <div class="trainer-wrapper">
             <button class="scroll-btn prev-btn">&lt;</button>
             <div class="trainers-container">
@@ -121,7 +130,7 @@
     </div>
     
     <div id="timings" class="section hidden">
-        <h2 class="h2">Timings Section</h2>
+        <h2 class="h2">Timings</h2>
         <div class="timings-grid">
             <div class="timing-card">
                 <h3>6:00 AM - 10:00 AM</h3>
@@ -143,7 +152,7 @@
     </div>
     
     <div id="offers" class="section hidden">
-        <h2 class="h2">Offers Section</h2>
+        <h2 class="h2">Available Offers</h2>
         <div class="offers-grid">
             <div class="offer-card">
                 <img src="img/offer1.jpg" alt="Offer 1 Image" class="offer-img">
@@ -178,7 +187,7 @@
     
     
     <div id="gears" class="section">
-        <h2>Gears Section</h2>
+        <h2>Gears</h2>
         <div class="gears-container">
             <div class="gear-item"><img src="img/gear1.jpg" alt="Gear 1"></div>
             <div class="gear-item"><img src="img/gear2.jpg" alt="Gear 2"></div>
@@ -195,13 +204,92 @@
             <div class="gear-item"><img src="img/gear13.jpg" alt="Gear 3"></div>
             
         </div>
+        <h2>Click or Hover to see all the gears available in our Gym</h2>
     </div>
     
     
-    <div id="supplements" class="section hidden">
-        <h2 class="h2">Supplements Section</h2>
-        <!-- Placeholder for Supplements content -->
+    <div id="supplements" class="section">
+        <h2 class="h2">Supplements</h2>
+        <div class="supplements-container">
+            <div class="supplement-card">
+                <img src="img/supplement1.jpg" alt="MuscleTech Nitro-Tech" class="supplement-img">
+                <h3>MuscleTech Nitro-Tech</h3>
+                <p>A popular protein supplement for muscle building.</p>
+                <div class="supplement-details">
+                    <span class="supplement-price">&#8377; 2499</span>
+                    <div class="buy-options">
+                        
+                        <button class="btn-buy-now">Buy Now</button>
+                    </div>
+                </div>
+            </div>
+            <div class="supplement-card">
+                <img src="img/supplement2.jpg" alt="Optimum Nutrition Gold Standard Whey" class="supplement-img">
+                <h3>Optimum Nutrition Gold Standard Whey</h3>
+                <p>A high-quality whey protein powder.</p>
+                <div class="supplement-details">
+                    <span class="supplement-price">&#8377; 5999</span>
+                    <div class="buy-options">
+                        
+                        <button class="btn-buy-now">Buy Now</button>
+                    </div>
+                </div>
+            </div>
+            <div class="supplement-card">
+                <img src="img/supplement3.jpg" alt="BSN Syntha-6 Edge" class="supplement-img">
+                <h3>BSN Syntha-6 Edge</h3>
+                <p>A protein supplement known for its taste and quality.</p>
+                <div class="supplement-details">
+                    <span class="supplement-price">&#8377; 3499</span>
+                    <div class="buy-options">
+                        
+                        <button class="btn-buy-now">Buy Now</button>
+                    </div>
+                </div>
+            </div>
+        </div>
     </div>
+    
+    <!-- Popup for Payment -->
+<div class="popup" id="popup">
+    <div class="popup-content">
+        <span class="close-btn" onclick="closePopup()">&times;</span>
+        <div class="popup-product-details">
+            <img src="" alt="Product Image" class="popup-product-img">
+            <div class="popup-product-info">
+                <h2 class="popup-product-title"></h2>
+                <p class="popup-product-description"></p>
+                <p class="popup-product-price"></p>
+            </div>
+        </div>
+        <h2>Payment Details</h2>
+        <p>Enter your payment information:</p>
+        <form id="payment-form">
+            <input type="text" placeholder="Card Number" pattern="[0-9]{13,16}" title="Enter valid card number (13-16 digits)" required>
+            <input type="text" placeholder="Expiry Date" pattern="(0[1-9]|1[0-2])\/?([0-9]{4}|[0-9]{2})" title="Enter valid expiry date (MM/YYYY or MM/YY)" required>
+            <input type="text" placeholder="CVV" pattern="[0-9]{3,4}" title="Enter valid CVV (3-4 digits)" required>
+            <input type="number" placeholder="Quantity" min="1" max="10" id="popup-quantity" required>
+            <p>Total Amount: &#8377; <span id="popup-total">0</span></p>
+            <button type="submit" class="btn-submit">Pay Now</button>
+        </form>
+    </div>
+</div>
+
+<!-- Popup for Maintenance Message -->
+<div class="popup" id="maintenancePopup">
+    <div class="popup-content">
+        <span class="close-btn" onclick="closeMaintenancePopup()">&times;</span>
+        <h2>Payment System Maintenance</h2>
+        <p>Sorry, the payment system is currently under maintenance. Please try again later.</p>
+    </div>
+</div>
+
+
+    
+    
+
+
+ 
     
     <footer id="footer" class="section hidden">
         <div class="footer-content">

@@ -38,7 +38,6 @@ h2, h3{
     -webkit-text-fill-color: transparent;
 }
 /* Navbar Section */
-/* Navbar Section */
 .navbar {
     display: flex;
     justify-content: space-between;
@@ -86,6 +85,7 @@ h2, h3{
 
 .navbar-right ul li {
     margin-right: 20px;
+    position: relative; /* Ensure relative positioning for dropdown */
 }
 
 .navbar-right ul li a {
@@ -112,6 +112,8 @@ h2, h3{
     z-index: 1000;
     text-align: left;
     border-radius: 5px;
+    top: 100%; /* Position dropdown below navbar item */
+    left: 0;
 }
 
 .dropdown-content a {
@@ -133,8 +135,7 @@ h2, h3{
     .navbar {
         flex-direction: column;
         align-items: center;
-        height: auto;
-        padding: 10px;
+        height: auto; /* Allow navbar height to adjust */
     }
 
     .navbar-left, .navbar-right {
@@ -147,6 +148,7 @@ h2, h3{
 
     .navbar-right {
         order: -1; /* Move dropdown to the top */
+        margin-top: 10px; /* Separate dropdown from other items */
     }
 
     .navbar-right ul {
@@ -172,6 +174,11 @@ h2, h3{
         margin: 0;
         width: 100%;
         text-align: center;
+        position: relative; /* Ensure relative positioning for dropdown */
+    }
+
+    .navbar-right ul li:hover .dropdown-content {
+        display: block; /* Show dropdown content on hover */
     }
 }
 
@@ -198,7 +205,7 @@ h2, h3{
 
 /* Intro Section */
 .intro-section {
-    background-image: url('./img/intro.png');
+    background-image: url('./img/intro.png'); /* Default background image */
     background-size: cover;
     background-position: center;
     color: #00c2ff;
@@ -263,6 +270,9 @@ h2, h3{
 
 @media (max-width: 768px) {
     .intro-section {
+        background-image: url('./img/intro2.jpg'); /* Mobile background image */
+        background-size: cover;
+        background-position: center;
         flex-direction: column;
         align-items: center;
         text-align: center;
@@ -277,6 +287,19 @@ h2, h3{
         margin-top: 20px;
     }
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 /* Package Section */
@@ -722,16 +745,6 @@ h2, h3{
 }
 
 
-
-
-
-
-
-
-
-
-
-
 /* Scroll to Top Button */
 #scrollToTopBtn {
     display: none;
@@ -753,6 +766,169 @@ h2, h3{
     background-color: rgba(0, 194, 255, 1); /* Button background color on hover */
     color: #000; /* Button text color on hover */
 }
+
+
+/* Supplements Section */
+.supplements-container {
+    display: flex;
+    flex-wrap: nowrap; /* Prevent wrapping */
+    overflow-x: auto; /* Enable horizontal scrolling */
+    gap: 20px;
+    padding: 20px;
+    justify-content: space-around;
+    margin-bottom: 20px; /* Add space at the bottom */
+}
+
+.supplement-card {
+    min-width: 300px; /* Minimum width to prevent collapsing */
+    width: 100%; /* Full width for smaller screens */
+    max-width: 300px; /* Limit maximum width */
+    height: auto;
+    background-color: rgba(0, 194, 255, 0.32);
+    border: 2px solid rgba(0, 194, 255, 1);
+    border-radius: 5px;
+    text-align: center;
+    padding: 10px;
+    box-sizing: border-box;
+    transition: transform 0.3s ease;
+    display: flex;
+    flex-direction: column; /* Ensure contents stack vertically */
+    overflow: hidden; /* Hide overflow content */
+}
+
+@media screen and (max-width: 768px) {
+    
+
+    .supplement-card {
+        width: 100%; /* Adjust width for medium screens */
+    }
+}
+
+.supplement-card:hover {
+    transform: scale(1.05);
+}
+
+.supplement-card h3 {
+    font-size: 1.5rem;
+    margin-bottom: 10px;
+    color: #00c2ff;
+}
+
+.supplement-card p {
+    font-size: 1rem;
+    color: #00c2ff;
+    margin-bottom: 15px;
+    flex: 1; /* Allow paragraph to grow within the card */
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.supplement-details {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px;
+}
+
+.supplement-price {
+    font-size: 1.2rem;
+    color: #00c2ff;
+    margin-right: auto; /* Pushes price to the left */
+}
+
+.btn-buy-now {
+    background-color: transparent;
+    color: #00c2ff;
+    border: 2px solid #00c2ff;
+    padding: 8px 16px;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.btn-buy-now:hover {
+    background-color: #00c2ff;
+    color: #000;
+}
+
+.supplement-img {
+    width: 70%;
+    height: 60%; /* Adjust image height as needed */
+    object-fit: cover;
+    border-radius: 5px;
+    margin: auto; /* Center align the image */
+}
+
+/* Popup Styles */
+.popup {
+    display: none;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 80%;
+    max-width: 500px; /* Adjust max-width as needed */
+    background-color: rgba(0, 0, 0, 0.5);
+    z-index: 1000;
+    justify-content: center;
+    align-items: center;
+    overflow-y: auto; /* Enable vertical scrolling */
+}
+.popup-product-img{
+    width: 50%;
+    height: 50%;
+    max-width: 200px;
+    max-height: 300px;
+}
+
+.popup-content {
+    position: relative; /* Ensure relative positioning for absolute child */
+    background-color: #000;
+    padding: 20px;
+    border-radius: 5px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+    max-width: 100%; /* Ensure popup content fits within screen */
+    text-align: center;
+}
+
+.close-btn {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    cursor: pointer;
+    font-size: 24px;
+    color: #00c2ff;
+    background-color: #000; /* Adjust color as needed */
+    border-radius: 50%;
+}
+
+.close-btn:hover{
+    background-color: #fff;
+}
+
+.btn-submit {
+    background-color: #00c2ff;
+    color: #fff;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease, color 0.3s ease;
+    margin-top: 10px;
+    font-size: 1.2rem;
+}
+
+.btn-submit:hover {
+    background-color: #007bbf;
+}
+
+
+
+
+
+
+
+
 
 /* Footer Section */
 #footer {
