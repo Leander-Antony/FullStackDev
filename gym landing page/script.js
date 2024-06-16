@@ -99,7 +99,7 @@ document.addEventListener('DOMContentLoaded', function() {
         if (visibleCards > numVisibleCards) {
             visibleCards--;
             currentScroll = Math.max(currentScroll - cardWidth, 0);
-            trainers.style.transform = `translateX(-₹{currentScroll}px)`;
+            trainers.style.transform = `translateX(-${currentScroll}px)`;
             updateVisibility();
             updateButtons();
         }
@@ -109,7 +109,7 @@ document.addEventListener('DOMContentLoaded', function() {
         if (visibleCards < totalCards) {
             visibleCards++;
             currentScroll = Math.min(currentScroll + cardWidth, (totalCards - numVisibleCards) * cardWidth);
-            trainers.style.transform = `translateX(-₹{currentScroll}px)`;
+            trainers.style.transform = `translateX(-${currentScroll}px)`;
             updateVisibility();
             updateButtons();
         }
