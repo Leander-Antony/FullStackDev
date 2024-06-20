@@ -45,7 +45,8 @@
             <div class="top-left">
                 <div class="form-group">
                     <h3><label for="registration-name">Name:</label></h3>
-                    <input type="text" id="registration-name" required>
+                    <input type="text" id="registration-name" required pattern="[A-Za-z\s]+" title="Name should only contain letters and spaces">
+                    <p class="error-message" id="name-error"></p>
                 </div>
                 <div class="form-group">
                     <h3><label for="registration-package">Choose a Package:</label></h3>
@@ -56,12 +57,14 @@
                         <option value="Premium">Premium Membership</option>
                         <option value="VIP">VIP Membership</option>
                     </select>
+                    <p class="error-message" id="package-error"></p>
                 </div>
             </div>
             <div class="top-right">
                 <div class="form-group">
                     <h3><label for="registration-phone">Phone Number:</label></h3>
-                    <input type="tel" id="registration-phone" required>
+                    <input type="tel" id="registration-phone" required pattern="^[0-9]{10}$" title="Please enter a valid 10-digit phone number">
+                    <p class="error-message" id="phone-error"></p>
                 </div>
                 <div class="form-group">
                     <h3><label for="registration-trainer">Choose a Trainer:</label></h3>
@@ -73,6 +76,7 @@
                         <option value="Keiani Mabe">Keiani Mabe</option>
                         <option value="David Laid">David Laid</option>
                     </select>
+                    
                 </div>
                 <div id="selected-trainer-image" class="trainer-image-container">
                     <img id="img-Zyzz" src="./img/zyzz.jpg" class="trainer-image">
@@ -85,7 +89,7 @@
             <div class="bottom-left">
                 <div class="form-group">
                     <h3>Choose Timings:</h3>
-                    <input type="radio" id="timing1" name="timing" value="6:00 AM - 10:00 AM">
+                    <input type="radio" id="timing1" name="timing" value="6:00 AM - 10:00 AM" required>
                     <label for="timing1">6:00 AM - 10:00 AM</label><br>
                     <input type="radio" id="timing2" name="timing" value="10:00 AM - 2:00 PM">
                     <label for="timing2">10:00 AM - 2:00 PM</label><br>
@@ -93,6 +97,7 @@
                     <label for="timing3">4:00 PM - 8:00 PM</label><br>
                     <input type="radio" id="timing4" name="timing" value="8:00 PM - 12:00 AM">
                     <label for="timing4">8:00 PM - 12:00 AM</label>
+                    <p class="error-message" id="timing-error"></p>
                 </div>
                 <div class="form-group">
                     <h3>Choose Offers:</h3>
@@ -121,6 +126,7 @@
         </div>
     </div>
 </div>
+
 
 <!-- Trainer Images (Hidden initially, shown based on selection) -->
 <div id="trainer-images">
@@ -153,48 +159,46 @@
     
     
     
-    <div id="packages" class="section hidden">
-        <h2 class="h2">Packages</h2>
-        <div class="packages">
-            <div class="package-card">
-                <h3>Basic Membership</h3>
-                <ul>
-                    <li>Access to gym facilities</li>
-                    <li>Basic fitness assessment</li>
-                    <li>24/7 gym access</li>
-                    <li>Rs: 1000/month</li>
-                </ul>
-            </div>
-            <div class="package-card">
-                <h3>Standard Membership</h3>
-                <ul>
-                    <li>Access to gym facilities</li>
-                    <li>Personalized workout plan</li>
-                    <li>Group fitness classes</li>
-                    <li>Rs: 1500/month</li>
-                </ul>
-            </div>
-            <div class="package-card">
-                <h3>Premium Membership</h3>
-                <ul>
-                    <li>Access to gym facilities</li>
-                    <li>Personal training sessions (6 sessions per month)</li>
-                    <li>Access to all classes and workshops</li>
-                    <li>Rs: 2000/month</li>
-                </ul>
-            </div>
-            <div class="package-card">
-                <h3>VIP Membership</h3>
-                <ul>
-                    <li>All benefits of Premium Membership</li>
-                    <li>Priority booking for classes and facilities</li>
-                    <li>Exclusive access to VIP events and workshops</li>
-                    <li>Rs: 2500/month</li>
-                </ul>
-            </div>
+<div id="packages" class="section hidden">
+    <h2 class="h2">Packages</h2>
+    <div class="packages">
+        <div class="package-card basic">
+            <img src="img/standard.png" alt="Basic Membership">
+            <h3>Basic Membership</h3>
+            <ul>
+                <li>Access to gym facilities</li>
+                <li>Basic fitness assessment</li>
+                <li>24/7 gym access</li>
+                <li>Rs: 1000/month</li>
+            </ul>
+        </div>
+        <div class="package-card premium">
+            <img src="img/premium.png" alt="Premium Membership">
+            <h3>Premium Membership</h3>
+            <ul>
+                <li>Access to gym facilities</li>
+                <li>Personal training sessions (6 sessions per month)</li>
+                <li>Access to all classes and workshops</li>
+                <li>Rs: 2000/month</li>
+            </ul>
+        </div>
+        <div class="package-card vip">
+            <img src="img/vip.png" alt="VIP Membership">
+            <h3>VIP Membership</h3>
+            <ul>
+                <li>All benefits of Premium Membership</li>
+                <li>Priority booking for classes and facilities</li>
+                <li>Exclusive access to VIP events and workshops</li>
+                <li>Rs: 2500/month</li>
+            </ul>
         </div>
     </div>
+</div>
+
+
     
+
+
     <div id="trainers" class="section">
         <h2 class="h2">Our Trainers</h2>
         <div class="trainer-wrapper">

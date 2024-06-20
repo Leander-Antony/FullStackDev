@@ -35,18 +35,6 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     }
 
-    // Function to hide navbar after the package section appears
-    function hideNavbar() {
-        const packageSection = document.getElementById('package');
-
-        // Check if package section is visible
-        if (packageSection && packageSection.classList.contains('visible')) {
-            navbar.style.display = 'none'; // Hide the navbar
-        } else {
-            navbar.style.display = 'block'; // Show the navbar
-        }
-    }
-
     // Mouse movement effect on register button
     const btnRegister = document.querySelector('.btn-register');
     if (btnRegister) {
@@ -58,6 +46,7 @@ document.addEventListener('DOMContentLoaded', function() {
             btnRegister.style.setProperty('--y', `₹{y}px`);
         });
     }
+
 
     // Trainer carousel functionality (assumed to be part of your existing script)
     const trainersContainer = document.querySelector('.trainers-container');
@@ -331,7 +320,7 @@ function closeRegistrationPopup() {
 function submitForm() {
     if (validateForm()) {
         closeRegistrationPopup();
-        document.getElementById("confirmationPopup").style.display = "block";
+        document.getElementById("confirmationPopup").style.display = "flex";
     }
 }
 
@@ -350,7 +339,57 @@ document.getElementById("supplement1").addEventListener("change", calculateTotal
 document.getElementById("supplement2").addEventListener("change", calculateTotal);
 document.getElementById("supplement3").addEventListener("change", calculateTotal);
 
+// Function to validate form before submission
+function validateForm() {
+    var name = document.getElementById("registration-name").value.trim();
+    var phone = document.getElementById("registration-phone").value.trim();
+    var package = document.getElementById("registration-package").value;
+    var trainer = document.getElementById("registration-trainer").value;
+    var timing = document.querySelector('input[name="timing"]:checked');
 
+    var isValid = true;
+
+    // Clear previous error messages
+    document.getElementById("name-error").innerText = "";
+    document.getElementById("phone-error").innerText = "";
+    document.getElementById("package-error").innerText = "";
+    
+    document.getElementById("timing-error").innerText = "";
+
+    // Validate name
+    if (name === "") {
+        document.getElementById("name-error").innerText = "Please enter your name.";
+        isValid = false;
+    } else if (!name.match(/^[A-Za-z\s]+$/)) {
+        document.getElementById("name-error").innerText = "Name should only contain letters and spaces.";
+        isValid = false;
+    }
+
+    // Validate phone number
+    var phonePattern = /^[0-9]{10}$/; // Example pattern for a 10-digit phone number
+    if (phone === "") {
+        document.getElementById("phone-error").innerText = "Please enter your phone number.";
+        isValid = false;
+    } else if (!phonePattern.test(phone)) {
+        document.getElementById("phone-error").innerText = "Please enter a valid 10-digit phone number.";
+        isValid = false;
+    }
+
+    // Validate package selection
+    if (package === "") {
+        document.getElementById("package-error").innerText = "Please select a package.";
+        isValid = false;
+    }
+
+
+    // Validate timing selection
+    if (!timing) {
+        document.getElementById("timing-error").innerText = "Please select a timing.";
+        isValid = false;
+    }
+
+    return isValid;
+}
 
 
 
