@@ -1,3 +1,7 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap');
+
+
 /* Reset default margin and padding */
 * {
     margin: 0;
@@ -7,11 +11,12 @@
 
 /* Basic styling for body and header */
 body {
-    font-family: Arial, sans-serif;
+    font-family: 'Roboto', sans-serif;
     line-height: 1.6;
     background-color: #000; /* Changed background color to black */
-    color: #2b2c28; /* Set default text color to #339989 */
+    color: #2b2c28; /* Set default text color to #BF00FF */
     padding: 20px;
+    align-items: center;
     overflow-y: hidden; /* Hide horizontal overflow */
 }
 
@@ -26,7 +31,7 @@ html, body {
 }
 
 h1, h2, h3{
-    background: linear-gradient(white, #339989);
+    background: linear-gradient(white, #BF00FF);
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
 }
@@ -38,9 +43,9 @@ h1, h2, h3{
     padding: 0 20px;
     width: 100%;
     height: 5%;
-    background-color: rgba(0, 194, 255, 0.32);
-    border-top: 2px solid #339989;
-    border-bottom: 2px solid #339989;
+    background-color: rgba(191, 0, 255, 0.32);
+    border-top: 2px solid #BF00FF;
+    border-bottom: 2px solid #BF00FF;
     position: fixed;
     width: 100%;
     top: 0;
@@ -61,7 +66,7 @@ h1, h2, h3{
 
 .gym-name {
     font-size: 1.5rem;
-    color: #339989;
+    color: #BF00FF;
 }
 
 .navbar-right {
@@ -89,7 +94,7 @@ h1, h2, h3{
 
 .navbar-right ul li a:hover {
     text-decoration: underline;
-    color: #339989;
+    color: #BF00FF;
 }
 
 
@@ -122,7 +127,7 @@ h1, h2, h3{
         top: 100%; /* Position dropdown below navbar */
         left: 0;
         width: 100%;
-        background-color: rgba(0, 194, 255, 0.32);
+        background-color: rgba(191, 0, 255, 0.32);
         z-index: 1000;
         border-bottom-left-radius: 5px;
         border-bottom-right-radius: 5px;
@@ -148,10 +153,10 @@ h1, h2, h3{
 
 
 .section {
-    width: 100vw; /* Full viewport width */
+    width: 90vw; /* Full viewport width */
     height: 100vh; /* Full viewport height */
     background-color: #131515; /* Changed section background color to black */
-    padding: 20px;
+    padding: 10px;
     margin: 20px auto;
     
     border-radius: 5px;
@@ -172,7 +177,7 @@ h1, h2, h3{
     background-image: url('./img/intro.png'); /* Default background image */
     background-size: cover;
     background-position: center;
-    color: #339989;
+    color: #BF00FF;
     padding: 20px;
     display: flex;
     align-items: center;
@@ -192,23 +197,23 @@ h1, h2, h3{
 .intro-content p {
     font-size: 1.2rem;
     margin-bottom: 30px;
-    color: #339989;
+    color: #BF00FF;
 }
 
 .btn-register, .btn-confirm {
     display: inline-block;
     background-color: transparent;
-    color: #339989;
+    color: #BF00FF;
     padding: 10px 20px;
     text-decoration: none;
     border-radius: 5px;
     transition: background-color 0.3s ease, color 0.3s ease;
-    border: 2px solid #339989;
+    border: 2px solid #BF00FF;
     position: relative;
 }
 
 .btn-register:hover {
-    background-color: #339989;
+    background-color: #BF00FF;
     color: #000;
 }
 
@@ -265,6 +270,10 @@ h1, h2, h3{
 
 
 /* Package Section */
+#packages{
+    height: 100%;
+}
+
 .packages {
     display: flex;
     justify-content: center;
@@ -288,8 +297,8 @@ h1, h2, h3{
 }
 
 .package-card img {
-    width: 30%; /* Make image fill the width of the card */
-    height: auto; /* Maintain aspect ratio */
+    width: auto; /* Make image fill the width of the card */
+    height: 70px; /* Maintain aspect ratio */
     border-top-left-radius: 5px;
     border-top-right-radius: 5px;
 }
@@ -396,8 +405,8 @@ h1, h2, h3{
     flex: 0 0 auto;
     width: 300px;
     height: 500px;
-    background-color: rgba(0, 194, 255, 0.32);
-    border: 2px solid #339989;
+    background-color: rgba(191, 0, 255, 0.32);
+    border: 2px solid #BF00FF;
     margin-right: 20px;
     border-radius: 5px;
     text-align: center;
@@ -418,28 +427,28 @@ h1, h2, h3{
 .trainer-card h3 {
     margin: 10px 0 5px;
     font-size: 1.5em;
-    color: #339989;
+    color: #BF00FF;
 }
 
 .trainer-card p {
     margin: 5px 0;
     font-size: 1em;
-    color: #339989;
+    color: #BF00FF;
 }
 
 .rating {
     margin-top: 10px;
     font-size: 1.2em;
-    color: #339989;
+    color: #BF00FF;
 }
 
 /* Add styles for scroll buttons */
 .scroll-btn {
-    position: absolute;
+    position: relative;
     top: 50%;
     transform: translateY(-50%);
-    background-color: rgba(0, 194, 255, 0.5);
-    color: #fff;
+    background-color:rgba(255, 0, 255, 0.5);
+    color:  #FF00FF;
     border: none;
     padding: 15px 7px;
     cursor: pointer;
@@ -503,7 +512,7 @@ h1, h2, h3{
 
 /* Timings Section */
 #timings {
-    color: #339989; /* Text color */
+    color: #BF00FF; /* Text color */
     padding: 20px;
     margin: 20px auto;
     height: auto;
@@ -526,8 +535,8 @@ h1, h2, h3{
 }
 
 .timing-card {
-    background-color: rgba(0, 194, 255, 0.32); /* Card background color with opacity */
-    border: 2px solid #339989; /* Card border with full opacity */
+    background-color: rgba(191, 0, 255, 0.32); /* Card background color with opacity */
+    border: 2px solid #BF00FF; /* Card border with full opacity */
     padding: 20px; /* Adjusted padding */
     border-radius: 5px;
     text-align: center;
@@ -583,7 +592,7 @@ h1, h2, h3{
 
 /* Offers Section */
 #offers {
-    color: #339989; /* Text color */
+    color: #BF00FF; /* Text color */
     padding: 20px;
     height: auto;
     margin: 20px auto;
@@ -606,8 +615,8 @@ h1, h2, h3{
     width: 100%; /* Full width for responsiveness */
     height: 100%;
     max-width: 450px; /* Adjust maximum width as per your design */
-    background-color: rgba(0, 194, 255, 0.32); /* Card background color with opacity */
-    border: 2px solid #339989; /* Card border with full opacity */
+    background-color: rgba(191, 0, 255, 0.32); /* Card background color with opacity */
+    border: 2px solid #BF00FF; /* Card border with full opacity */
     border-radius: 5px;
     padding: 10px;
     box-sizing: border-box;
@@ -734,9 +743,9 @@ h1, h2, h3{
     right: 20px;
     z-index: 100;
     font-size: 18px;
-    background-color: rgba(0, 194, 255, 0.32); /* Button background color with opacity */
-    color: #339989; /* Button text color */
-    border: 2px solid #339989; /* Button border color */
+    background-color: rgba(191, 0, 255, 0.32); /* Button background color with opacity */
+    color: #BF00FF; /* Button text color */
+    border: 2px solid #BF00FF; /* Button border color */
     border-radius: 50%;
     padding: 10px;
     cursor: pointer;
@@ -744,7 +753,7 @@ h1, h2, h3{
 }
 
 #scrollToTopBtn:hover {
-    background-color: #339989; /* Button background color on hover */
+    background-color: #BF00FF; /* Button background color on hover */
     color: #000; /* Button text color on hover */
 }
 
@@ -765,8 +774,8 @@ h1, h2, h3{
     width: 100%; /* Full width for smaller screens */
     max-width: 300px; /* Limit maximum width */
     height: auto;
-    background-color: rgba(0, 194, 255, 0.32);
-    border: 2px solid #339989;
+    background-color: rgba(191, 0, 255, 0.32);
+    border: 2px solid #BF00FF;
     border-radius: 5px;
     text-align: center;
     padding: 10px;
@@ -792,12 +801,12 @@ h1, h2, h3{
 .supplement-card h3 {
     font-size: 1.5rem;
     margin-bottom: 10px;
-    color: #339989;
+    color: #BF00FF;
 }
 
 .supplement-card p {
     font-size: 1rem;
-    color: #339989;
+    color: #BF00FF;
     margin-bottom: 15px;
     flex: 1; /* Allow paragraph to grow within the card */
     overflow: hidden;
@@ -813,14 +822,14 @@ h1, h2, h3{
 
 .supplement-price {
     font-size: 1.2rem;
-    color: #339989;
+    color: #BF00FF;
     margin-right: auto; /* Pushes price to the left */
 }
 
 .btn-buy-now {
     background-color: transparent;
-    color: #339989;
-    border: 2px solid #339989;
+    color: #BF00FF;
+    border: 2px solid #BF00FF;
     padding: 8px 16px;
     border-radius: 5px;
     cursor: pointer;
@@ -828,7 +837,7 @@ h1, h2, h3{
 }
 
 .btn-buy-now:hover {
-    background-color: #339989;
+    background-color: #BF00FF;
     color: #000;
 }
 
@@ -866,6 +875,7 @@ h1, h2, h3{
     position: relative; /* Ensure relative positioning for absolute child */
     background-color: #000;
     padding: 20px;
+    color: #BF00FF;
     border-radius: 5px;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
     max-width: 100%; /* Ensure popup content fits within screen */
@@ -878,7 +888,7 @@ h1, h2, h3{
     right: 10px;
     cursor: pointer;
     font-size: 24px;
-    color: #339989;
+    color: #BF00FF;
     background-color: #000; /* Adjust color as needed */
     border-radius: 50%;
 }
@@ -888,7 +898,7 @@ h1, h2, h3{
 }
 
 .btn-submit {
-    background-color: #339989;
+    background-color: #BF00FF;
     color: #fff;
     border: none;
     padding: 10px 20px;
@@ -900,17 +910,17 @@ h1, h2, h3{
 }
 
 .btn-submit:hover {
-    background-color: #339989;
+    background-color: #BF00FF;
 }
 
 
 
 /* Footer Section */
 #footer {
-    color: #339989; /* Text color */
+    color: #BF00FF; /* Text color */
     padding: 20px;
     height: auto;
-    border-top: 2px solid #339989; /* Top border */
+    border-top: 2px solid #BF00FF; /* Top border */
 }
 
 .footer-content {
@@ -1015,7 +1025,7 @@ h1, h2, h3{
     right: 10px;
     cursor: pointer;
     font-size: 24px;
-    color: #339989;
+    color: #BF00FF;
 }
 
 .form-container {
@@ -1050,7 +1060,7 @@ h1, h2, h3{
 }
 
 .btn-submit-registration {
-    background-color: #339989;
+    background-color: #BF00FF;
     color: #fff;
     border: none;
     padding: 10px 20px;
@@ -1062,7 +1072,7 @@ h1, h2, h3{
 }
 
 .btn-submit-registration:hover {
-    background-color: #007bbf;
+    background-color:rgba(191, 0, 255, 0.32);
 }
 
 .chad-image {
@@ -1100,6 +1110,11 @@ h1, h2, h3{
     text-align: center; /* Center text content */
 }
 
+.btn-confirm:hover{
+    background-color: #BF00FF;
+    color: #000;
+    
+}
 
 .error-message {
     color: red;
