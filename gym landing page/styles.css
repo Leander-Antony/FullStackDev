@@ -379,6 +379,9 @@ h1, h2, h3{
 
 
 /* Add styles for trainers section */
+#trainers{
+    height: auto;
+}
 .trainer-wrapper {
     display: flex;
     align-items: center;
@@ -759,6 +762,9 @@ h1, h2, h3{
 
 
 /* Supplements Section */
+#supplements{
+    height: auto;
+}
 .supplements-container {
     display: flex;
     flex-wrap: nowrap; /* Prevent wrapping */
