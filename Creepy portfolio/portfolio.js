@@ -6,26 +6,27 @@ const projectsData = [
         link: "https://sms-classsifier.streamlit.app/"
     },
     {
-        title: "Project 2: The Black Death",
-        description: "The Black Death, also known as the Great Plague or the Bubonic Plague, was one of the most devastating pandemics in human history. It swept through Europe, Asia, and Africa in the 14th century, killing an estimated 75–200 million people.",
+        title: "Project 2: The Phantom Portfolio",
+        description: "Dare to explore my first eerie creation—a portfolio website born from the shadows of HTML, CSS, and JavaScript. This is just the beginning; as my skills grow, so will the darkness within this site.",
     },
     {
-        title: "Project 3: The Spanish Inquisition",
-        description: "The Spanish Inquisition was a judicial institution established by the Catholic Monarchs Ferdinand II of Aragon and Isabella I of Castile in 1478. It was intended to maintain Catholic orthodoxy in their kingdoms and to replace the Medieval Inquisition, which was under Papal control.",
+        title: "Project 3: The Haunting Data Blog",
+        description: "An upcoming collection of cryptic tales from the realm of data science. Expect unsettling insights, ghostly tutorials, and stories of data that refuse to rest. Keep your eyes open; the blog is coming soon.",
     },
     {
-        title: "Project 4: The Lizzie Borden Axe Murders",
-        description: "The Lizzie Borden axe murders occurred in Fall River, Massachusetts, in 1892. Lizzie Borden was accused of murdering her father and stepmother with an axe, but she was acquitted at trial due to lack of evidence.",
+        title: "Project 4: The Discord Music Apparition",
+        description: "A spectral music bot that haunts the halls of Discord. Crafted with Python, it plays tunes that might just summon spirits. The bot is ever-evolving, with new features emerging from the shadows.",
     },
     {
-        title: "Project 5: The Chernobyl Disaster",
-        description: "The Chernobyl disaster was a nuclear accident that occurred on 26 April 1986 at the No. 4 reactor in the Chernobyl Nuclear Power Plant, near the city of Pripyat in the north of the Ukrainian SSR. It is considered the worst nuclear disaster in history and resulted in a widespread release of radioactive material.",
+        title: "Project 5: The LLM Text Adventure Curse",
+        description: "Step into a cursed narrative where your choices determine your fate. Powered by a large language model, this text-based adventure game will draw you into its twisted tale. But be warned—there’s no escape.",
     },
     {
-        title: "Project 6: The Jonestown Massacre",
-        description: "The Jonestown Massacre was the mass suicide of members of the Peoples Temple cult led by Jim Jones in November 1978. More than 900 people died, most of them by drinking cyanide-laced Flavor Aid, in Jonestown, Guyana.",
+        title: "Project 6: The Agents of Dread",
+        description: "An ongoing experiment with agents that roam the digital underworld, extracting knowledge and uncovering truths best left forgotten. These agents act on their own, driven by unseen forces, and the results are as unpredictable as they are eerie.",
     }
 ];
+
 
 // Function to create HTML elements for each project
 function createProjectElements() {

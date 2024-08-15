@@ -1,6 +1,6 @@
 body {
     font-family: 'Gloria Hallelujah', cursive;
-    background-image: url('skeleton.gif');
+    background-image: url('uitils/skeleton.gif');
     background-size: cover;
     background-position: center;
     color: #ffffff;
@@ -51,15 +51,15 @@ button:hover {
 /* Responsive styles */
 @media only screen and (max-width: 600px) {
     .container {
-        padding: 10px; /* Adjust padding for smaller screens */
+        padding: 10px; 
     }
 
     .blogs {
-        grid-template-columns: 1fr; /* Display blogs in a single column on smaller screens */
+        grid-template-columns: 1fr; 
     }
 
     button {
-        width: 100%; /* Make buttons full-width on smaller screens */
+        width: 100%; 
     }
 }
 
@@ -67,19 +67,19 @@ button:hover {
 /* Responsive styles */
 @media only screen and (max-width: 600px) {
     body {
-        font-family: Arial, Helvetica, sans-serif; /* Change font for smaller screens */
+        font-family: Arial, Helvetica, sans-serif; 
     }
     
     .container {
-        padding: 10px; /* Adjust padding for smaller screens */
+        padding: 10px;
     }
 
     .blogs {
-        grid-template-columns: 1fr; /* Display blogs in a single column on smaller screens */
+        grid-template-columns: 1fr; 
     }
 
     button {
-        width: 100%; /* Make buttons full-width on smaller screens */
+        width: 100%; 
     }
 }
 

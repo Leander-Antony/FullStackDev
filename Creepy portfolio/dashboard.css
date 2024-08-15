@@ -2,7 +2,7 @@
 body {
     margin: 0;
     padding: 0;
-    background-image: url('soldier.gif');
+    background-image: url('uitils/soldier.gif');
     background-size: cover;
     background-position: center;
     font-family: 'Gloria Hallelujah', cursive;
@@ -113,7 +113,7 @@ h1 {
     
 
     .welcome-message {
-        font-size: 18px; /* Adjust font size of welcome message for smaller screens */
+        font-size: 18px; 
     }
 }
 @keyframes blood-burst-animation {

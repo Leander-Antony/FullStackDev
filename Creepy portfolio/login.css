@@ -1,6 +1,6 @@
 body {
   font-family: 'Gloria Hallelujah', cursive;
-  background-image: url('shadows.gif');
+  background-image: url('uitils/shadows.gif');
   background-size: cover;
   color: #ffffff;
   margin: 0;
@@ -91,7 +91,7 @@ button:hover {
   }
 
   .creepy-img {
-      background-image: url('devil.jpg'); /* Use devil.jpg for smaller screens */
+      background-image: url('uitils/devil.jpg'); /* Use devil.jpg for smaller screens */
   }
 
   .creepy-img p {
@@ -101,7 +101,7 @@ button:hover {
 
 @media only screen and (min-width: 601px) {
   .creepy-img {
-      background-image: url('creepy_image.jpeg'); /* Use creepy_image.jpeg for larger screens */
+      background-image: url('uitils/creepy_image.jpeg'); /* Use creepy_image.jpeg for larger screens */
   }
 }
 
