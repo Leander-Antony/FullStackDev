@@ -14,7 +14,7 @@ body {
 
 .container {
   position: relative;
-  z-index: 2; /* Ensure login form is above the creepy image */
+  z-index: 2; 
 }
 
 .login-form {
@@ -42,18 +42,18 @@ button:hover {
   width: 100%;
   height: 100%;
   background-color: rgba(0, 0, 0, 0.9);
-  background-size: cover; /* Change to 'cover' for better fitting */
+  background-size: cover; 
   display: flex;
   justify-content: center;
   align-items: center;
   flex-direction: column;
-  z-index: 1; /* Ensure the creepy image is above the login form */
+  z-index: 1; 
 }
 
 .creepy-img p {
   font-size: 1.5em;
   margin: 0;
-  padding: 0 20px; /* Add padding to the text for spacing */
+  padding: 0 20px;
   text-align: center;
 }
 
@@ -75,33 +75,33 @@ button:hover {
   position: fixed;
   top: 20px;
   left: 20px;
-  color: rgb(252, 0, 0); /* Red color for the text */
+  color: rgb(252, 0, 0);
   font-size: 20px;
-  z-index: 9999; /* Ensure the text is on top of other elements */
+  z-index: 9999; 
 }
 
 /* Responsive styles */
 @media only screen and (max-width: 600px) {
   body {
-      font-family: Arial, sans-serif; /* Change font for smaller screens */
+      font-family: 'Gloria Hallelujah', sans-serif; 
   }
 
   .container {
-      width: 90%; /* Adjust container width for smaller screens */
+      width: 90%; 
   }
 
   .creepy-img {
-      background-image: url('uitils/devil.jpg'); /* Use devil.jpg for smaller screens */
+      background-image: url('uitils/devil.jpg'); 
   }
 
   .creepy-img p {
-      font-size: 1em; /* Decrease font size for smaller screens */
+      font-size: 1em; 
   }
 }
 
 @media only screen and (min-width: 601px) {
   .creepy-img {
-      background-image: url('uitils/creepy_image.jpeg'); /* Use creepy_image.jpeg for larger screens */
+      background-image: url('uitils/creepy_image.jpeg'); 
   }
 }
 
