@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/about.css') }}">
+    <link rel="icon" href="{{ url_for('static', filename='utils/fire.ico') }}" type="image/x-icon">
+</head>
+<body>
+    <main>
+        <h1>About Us</h1>
+        <section>
+            <p>
+                Embark on our dark journey as we delve into the shadows of history, 
+                exploring sinister truths and collecting cryptic tales. Join us in confronting the eerie and uncovering chilling 
+                secrets hidden in forgotten places. Contact us at leander.antony2023@gmail.com to become part of our 
+                community of seekers and explorers, but beware, for once you enter the darkness with us, 
+                there's no turning back.
+            </p>
+        </section>
+        <div class="button-container">
+            <button class="return-button" onclick="window.location.href='/'">&lt;- Back to Main page</button>
+        </div>
+    </main>
+    <footer>
+        <p>&copy; 2024 Still alive</p>
+    </footer>
+    <script src="{{ url_for('static', filename='js/about.js') }}"></script>
+</body>
+</html>

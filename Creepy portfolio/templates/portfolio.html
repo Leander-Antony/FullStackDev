@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Creepy Portfolio</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/portfolio.css') }}">
+    <link rel="icon" href="{{ url_for('static', filename='utils/fire.ico') }}" type="image/x-icon">
+</head>
+<body>
+    <div class="container">
+        <h1>Creepy Portfolio</h1>
+        <div class="projects" id="projects">
+            <!-- Projects will be dynamically added here -->
+        </div>
+        <button id="backToDashboard">Back to Dashboard</button>
+    </div>
+    <script src="{{ url_for('static', filename='js/portfolio.js') }}"></script>
+</body>
+</html>
