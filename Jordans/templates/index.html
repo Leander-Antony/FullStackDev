@@ -1,0 +1,198 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Jordan Clone - Hero Section</title>
+    <!-- Link to the CSS file -->
+    <link rel="stylesheet" type="text/css" href="{% static 'css/styles.css' %}">
+</head>
+<body>
+    <nav class="navbar">
+        <div class="container">
+            <a href="#" class="logo">Jordan Clone</a>
+            <ul class="nav-links">
+                <li><a href="#home">Home</a></li>
+                <li><a href="#products">Products</a></li>
+                <li><a href="#about">About</a></li>
+                <li><a href="#categories">Categories</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="hero" style="background-image: url('{% static 'img/hero.jpeg' %}');">
+        <div class="hero-content">
+            <h1>Unleash Your Style</h1>
+            <p>Step up your sneaker game with the latest Jordan styles.</p>
+            <a href="#products" class="cta-button">Shop Now</a>
+        </div>
+    </section>
+
+    <!-- Products Section -->
+    <section id="products" class="products">
+        <div class="container">
+            <h2>Our Products</h2>
+            <div class="product-grid" id="productGrid">
+                <div class="product-card">
+                    <img src="{% static 'img/1.jpg' %}" alt="Product 1">
+                    <h3>Jordan Air 1</h3>
+                    <p>$199.99</p>
+                    <a href="#" class="buy-button">Buy Now</a>
+                </div>
+                <div class="product-card">
+                    <img src="{% static 'img/2.jpg' %}" alt="Product 2">
+                    <h3>Jordan 4 Retro</h3>
+                    <p>$249.99</p>
+                    <a href="#" class="buy-button">Buy Now</a>
+                </div>
+                <div class="product-card">
+                    <img src="{% static 'img/3.jpg' %}" alt="Product 3">
+                    <h3>Jordan 11</h3>
+                    <p>$299.99</p>
+                    <a href="#" class="buy-button">Buy Now</a>
+                </div>
+                <div class="product-card see-more">
+                    <h3>See More</h3>
+                    <p>Discover all our products!</p>
+                    <a href="#" class="buy-button">Shop All</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Categories Section -->
+    <section id="categories" class="categories">
+        <div class="container">
+            <h2>Shop By Category</h2>
+            <div class="category-grid">
+                <div class="category-card">
+                    <img src="{% static 'img/men.jpg' %}" alt="Men's Clothing">
+                    <h3>Men</h3>
+                    <p>Explore our men's collection.</p>
+                    <a href="men.html" class="view-button">View Collection</a>
+                </div>
+                <div class="category-card">
+                    <img src="{% static 'img/women.jpg' %}" alt="Women's Clothing">
+                    <h3>Women</h3>
+                    <p>Discover our women's styles.</p>
+                    <a href="women.html" class="view-button">View Collection</a>
+                </div>
+                <div class="category-card">
+                    <img src="{% static 'img/kids.jpg' %}" alt="Kids' Clothing">
+                    <h3>Kids</h3>
+                    <p>Check out our kids' range.</p>
+                    <a href="kids.html" class="view-button">View Collection</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Featured Products Section -->
+    <section id="featured-products">
+        <div class="container">
+            <h2>Featured Products</h2>
+            <div class="product-grid">
+                <div class="product-card">
+                    <img src="{% static 'img/featured1.jpg' %}" alt="Featured Product 1">
+                    <h3>Featured Item 1</h3>
+                    <p>$29.99</p>
+                    <a href="#" class="view-button">View Product</a>
+                </div>
+                <div class="product-card">
+                    <img src="{% static 'img/featured2.jpg' %}" alt="Featured Product 2">
+                    <h3>Featured Item 2</h3>
+                    <p>$49.99</p>
+                    <a href="#" class="view-button">View Product</a>
+                </div>
+                <div class="product-card">
+                    <img src="{% static 'img/featured3.jpg' %}" alt="Featured Product 3">
+                    <h3>Featured Item 3</h3>
+                    <p>$39.99</p>
+                    <a href="#" class="view-button">View Product</a>
+                </div>
+                <div class="product-card">
+                    <img src="{% static 'img/featured4.jpg' %}" alt="Featured Product 4">
+                    <h3>Featured Item 4</h3>
+                    <p>$39.99</p>
+                    <a href="#" class="view-button">View Product</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="about">
+        <h2>About</h2>
+        <div class="container-about">
+            <div class="about-card">
+                <h3>Our Mission</h3>
+                <p>
+                    At Jordan Clone, we are dedicated to bringing you the finest quality sneakers inspired by the legendary Jordan brand.
+                    Step up your sneaker game and embrace the legacy of Jordan with us.
+                </p>
+                <a href="#products" class="cta-button">Explore Our Collection</a>
+            </div>
+
+            <div class="about-card">
+                <h3>Our Vision</h3>
+                <p>
+                    Founded with a passion for style and performance, Jordan Clone has grown into a community of dedicated sneakerheads.
+                    We pride ourselves on attention to detail, quality craftsmanship, and a commitment to delivering the best shopping experience.
+                </p>
+                <a href="#products" class="cta-button">Shop Now</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Customer Reviews Section -->
+    <section id="reviews">
+        <div class="container">
+            <h2>Customer Reviews</h2>
+            <div class="review-grid">
+                <div class="review-card">
+                    <p>"These Jordans are game-changers! The style and comfort elevate my sneaker game to another level!"</p>
+                    <h4>- Alex Turner</h4>
+                </div>
+                <div class="review-card">
+                    <p>"I've never received so many compliments on my kicks before! These are a must-have for any sneakerhead."</p>
+                    <h4>- Samira Lee</h4>
+                </div>
+                <div class="review-card">
+                    <p>"Jordan has nailed it again! The quality and attention to detail are unmatched. I can’t wait for the next drop!"</p>
+                    <h4>- Chris Jordan</h4>
+                </div>
+                <div class="review-card">
+                    <p>"I feel like a legend wearing these! Perfect for both on and off the court!"</p>
+                    <h4>- Jessica Rivera</h4>
+                </div>
+                <div class="review-card">
+                    <p>"Nothing compares to the performance and style of Jordans. They fit like a dream and look amazing!"</p>
+                    <h4>- Mike Thompson</h4>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer Section -->
+    <footer>
+        <div class="container">
+            <div class="footer-links">
+                <a href="#about">About Us</a>
+                <a href="#privacy">Privacy Policy</a>
+                <a href="#terms">Terms of Service</a>
+            </div>
+            <div class="social-media">
+                <a href="https://facebook.com" target="_blank">Facebook</a>
+                <a href="https://twitter.com" target="_blank">Twitter</a>
+                <a href="https://instagram.com" target="_blank">Instagram</a>
+            </div>
+            <p>&copy; 2024 Jordan Clone. All Rights Reserved.</p>
+        </div>
+    </footer>
+
+    <!-- Link to the JavaScript file -->
+    <script src="{% static 'js/script.js' %}"></script>
+</body>
+</html>

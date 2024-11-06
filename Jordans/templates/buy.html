@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Product Purchase</title>
+    <link
+      rel="stylesheet"
+      href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"
+    />
+    <style>
+      body {
+        background-color: #2b2b2b;
+        color: #fff;
+        font-family: Arial, sans-serif;
+      }
+      .product-container {
+        display: flex;
+        justify-content: space-between;
+        margin-top: 50px;
+      }
+      .product-details {
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+        justify-content: center;
+        align-items: center;
+        width: 55%;
+      }
+      .product-details img {
+        width: 70%;
+        border-radius: 10px;
+      }
+      .details {
+        margin-top: 20px;
+      }
+      .details h3 {
+        color: #e63946;
+      }
+      .btn-custom {
+        background-color: #e63946;
+        color: white;
+      }
+      .recommended-products {
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+        width: 35%;
+        height: auto;
+        background-color: #333;
+        padding: 20px;
+        border-radius: 10px;
+        align-items: center;
+      }
+
+      .recommended-products img {
+        width: 200px;
+        height: 200px;
+        object-fit: cover;
+        border-radius: 10px;
+        margin-bottom: 15px;
+      }
+
+      .recommended-products h4 {
+        margin-bottom: 15px;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <div class="product-container">
+        <!-- Left Section: Product Image and Details -->
+        <div class="product-details">
+          <img src="1.jpg" alt="Product Image" />
+
+          <div class="details">
+            <h3>Product Name</h3>
+            <p>
+              Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras
+              vitae ligula et tortor vestibulum convallis. Integer non efficitur
+              erat.
+            </p>
+
+            <!-- Size Selection -->
+            <label for="size">Choose Size:</label>
+            <select id="size" class="form-control mb-3">
+              <option value="S">Small</option>
+              <option value="M">Medium</option>
+              <option value="L">Large</option>
+              <option value="XL">X-Large</option>
+            </select>
+
+            <!-- Payment Method -->
+            <h4>Payment Method</h4>
+            <select class="form-control mb-3">
+              <option value="upi">UPI</option>
+              <option value="credit_card">Credit Card</option>
+              <option value="debit_card">Debit Card</option>
+              <option value="paypal">PayPal</option>
+            </select>
+
+            <!-- Buy Button -->
+            <button class="btn btn-custom btn-block">Buy Now</button>
+          </div>
+        </div>
+
+        <!-- Right Section: Recommended Products -->
+        <div class="recommended-products">
+          <h4>Recommended Products</h4>
+          <img src="2.jpg" alt="Recommended Product 1" />
+          <img src="3.jpg" alt="Recommended Product 2" />
+          <img src="4.jpg" alt="Recommended Product 3" />
+        </div>
+      </div>
+    </div>
+
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.0.7/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+  </body>
+</html>

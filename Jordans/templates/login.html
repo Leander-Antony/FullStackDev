@@ -1,0 +1,35 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Login</title>
+    <link rel="stylesheet" type="text/css" href="{% static 'css/login.css' %}"> <!-- Link to the CSS file -->
+</head>
+<body>
+    <div class="container">
+        <h2>Login</h2>
+
+        <!-- Display messages if there are any -->
+        {% for message in messages %}
+            <p style="color: red;">{{ message }}</p>
+        {% endfor %}
+
+        <form method="post">
+            {% csrf_token %}
+            <label for="username">Username:</label>
+            <input type="text" name="username" required>
+            <br>
+            <label for="password">Password:</label>
+            <input type="password" name="password" required>
+            <br>
+            <input type="submit" value="Login"/>
+        </form>
+
+        <!-- Link to the signup page for new users -->
+        <p>
+            Don't have an account? <a href="{% url 'register' %}">Sign up here</a>.
+        </p>
+    </div>
+</body>
+</html>

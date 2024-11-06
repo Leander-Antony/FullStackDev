@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Women's Collection</title>
+    <link rel="stylesheet" href="women.css">
+    <script>
+        let cart = [];
+
+        function addToCart(product) {
+            cart.push(product);
+            localStorage.setItem('cart', JSON.stringify(cart));
+            alert(`${product.name} has been added to your cart!`);
+        }
+
+        function viewCart() {
+            window.location.href = 'cart.html';
+        }
+    </script>
+</head>
+<body>
+    <!-- Navbar -->
+    <nav class="navbar">
+        <div class="container">
+            <a href="index.html" class="logo">Jordan Clone</a>
+            <ul class="nav-links">
+                <li><a href="index.html#home">Home</a></li>
+                <li><a href="index.html#products">Products</a></li>
+                <li><a href="index.html#categories">Categories</a></li>
+                <li><a href="index.html#about">About</a></li>
+                <li><a href="index.html#contact">Contact</a></li>
+                <li><button class="button" onclick="viewCart()">View Cart</button></li>
+            </ul>
+        </div>
+    </nav>
+    
+    <section class="category">
+        <div class="container-products">
+            <h2>Women's Collection</h2>
+            <div class="product-grid">
+                <!-- Product Items -->
+                <div class="product-card">
+                    <img src="w1.jpg" alt="Jordan Women's Shoe 1">
+                    <h3>Jordan Air 1 Retro (Women's)</h3>
+                    <p>Size: 7</p>
+                    <p>Color: Black/Pink</p>
+                    <p>Price: $90</p>
+                    <div class="button-container">
+                        <button class="button" onclick="window.location.href='buy.html'">Buy Now</button>
+                        <button class="button add-to-cart" onclick="addToCart({name: 'Jordan Air 1 Retro (Women\'s)', price: 90})"><i class="fas fa-shopping-cart"></i> Add to Cart</button>
+                    </div>
+                </div>
+                <div class="product-card">
+                    <img src="w2.jpg" alt="Jordan Women's Shoe 2">
+                    <h3>Jordan Air 4 Retro (Women's)</h3>
+                    <p>Size: 8</p>
+                    <p>Color: White/Purple</p>
+                    <p>Price: $120</p>
+                    <div class="button-container">
+                        <button class="button" onclick="window.location.href='buy.html'">Buy Now</button>
+                        <button class="button add-to-cart" onclick="addToCart({name: 'Jordan Air 4 Retro (Women\'s)', price: 120})"><i class="fas fa-shopping-cart"></i> Add to Cart</button>
+                    </div>
+                </div>
+                <div class="product-card">
+                    <img src="w3.jpg" alt="Jordan Women's Shoe 3">
+                    <h3>Jordan 11 Retro (Women's)</h3>
+                    <p>Size: 9</p>
+                    <p>Color: Black/Silver</p>
+                    <p>Price: $150</p>
+                    <div class="button-container">
+                        <button class="button" onclick="window.location.href='buy.html'">Buy Now</button>
+                        <button class="button add-to-cart" onclick="addToCart({name: 'Jordan 11 Retro (Women\'s)', price: 150})"><i class="fas fa-shopping-cart"></i> Add to Cart</button>
+                    </div>
+                </div>
+                <div class="product-card">
+                    <img src="w4.jpg" alt="Jordan Women's Shoe 4">
+                    <h3>Jordan 3 Retro (Women's)</h3>
+                    <p>Size: 10</p>
+                    <p>Color: White/Coral</p>
+                    <p>Price: $130</p>
+                    <div class="button-container">
+                        <button class="button" onclick="window.location.href='buy.html'">Buy Now</button>
+                        <button class="button add-to-cart" onclick="addToCart({name: 'Jordan 3 Retro (Women\'s)', price: 130})"><i class="fas fa-shopping-cart"></i> Add to Cart</button>
+                    </div>
+                </div>
+                <div class="product-card">
+                    <img src="w5.jpg" alt="Jordan Women's Shoe 5">
+                    <h3>Jordan 5 Retro (Women's)</h3>
+                    <p>Size: 8.5</p>
+                    <p>Color: Black/Gold</p>
+                    <p>Price: $140</p>
+                    <div class="button-container">
+                        <button class="button" onclick="window.location.href='buy.html'">Buy Now</button>
+                        <button class="button add-to-cart" onclick="addToCart({name: 'Jordan 5 Retro (Women\'s)', price: 140})"><i class="fas fa-shopping-cart"></i> Add to Cart</button>
+                    </div>
+                </div>
+                <div class="product-card">
+                    <img src="w6.jpg" alt="Nike Air Max 90 (Women's)">
+                    <h3>Nike Air Max 90 (Women's)</h3>
+                    <p>Size: 9</p>
+                    <p>Color: White/Pink</p>
+                    <p>Price: $120</p>
+                    <div class="button-container">
+                        <button class="button" onclick="window.location.href='buy.html'">Buy Now</button>
+                        <button class="button add-to-cart" onclick="addToCart({name: 'Nike Air Max 90 (Women\'s)', price: 120})"><i class="fas fa-shopping-cart"></i> Add to Cart</button>
+                    </div>
+                </div>
+                
+                <div class="product-card">
+                    <img src="w7.jpg" alt="Adidas Ultraboost (Women's)">
+                    <h3>Adidas Ultraboost (Women's)</h3>
+                    <p>Size: 8</p>
+                    <p>Color: Black/White</p>
+                    <p>Price: $180</p>
+                    <div class="button-container">
+                        <button class="button" onclick="window.location.href='buy.html'">Buy Now</button>
+                        <button class="button add-to-cart" onclick="addToCart({name: 'Adidas Ultraboost (Women\'s)', price: 180})"><i class="fas fa-shopping-cart"></i> Add to Cart</button>
+                    </div>
+                </div>
+                
+                <div class="product-card">
+                    <img src="w8.jpg" alt="Puma RS-X (Women's)">
+                    <h3>Puma RS-X (Women's)</h3>
+                    <p>Size: 7.5</p>
+                    <p>Color: Pink/Blue</p>
+                    <p>Price: $110</p>
+                    <div class="button-container">
+                        <button class="button" onclick="window.location.href='buy.html'">Buy Now</button>
+                        <button class="button add-to-cart" onclick="addToCart({name: 'Puma RS-X (Women\'s)', price: 110})"><i class="fas fa-shopping-cart"></i> Add to Cart</button>
+                    </div>
+                </div>
+                
+                <div class="product-card">
+                    <img src="w9.jpg" alt="Reebok Classic (Women's)">
+                    <h3>Reebok Classic (Women's)</h3>
+                    <p>Size: 9.5</p>
+                    <p>Color: White/Black</p>
+                    <p>Price: $90</p>
+                    <div class="button-container">
+                        <button class="button" onclick="window.location.href='buy.html'">Buy Now</button>
+                        <button class="button add-to-cart" onclick="addToCart({name: 'Reebok Classic (Women\'s)', price: 90})"><i class="fas fa-shopping-cart"></i> Add to Cart</button>
+                    </div>
+                </div>
+                
+                <div class="product-card">
+                    <img src="w10.jpg" alt="New Balance 574 (Women's)">
+                    <h3>New Balance 574 (Women's)</h3>
+                    <p>Size: 8</p>
+                    <p>Color: Grey/Pink</p>
+                    <p>Price: $85</p>
+                    <div class="button-container">
+                        <button class="button" onclick="window.location.href='buy.html'">Buy Now</button>
+                        <button class="button add-to-cart" onclick="addToCart({name: 'New Balance 574 (Women\'s)', price: 85})"><i class="fas fa-shopping-cart"></i> Add to Cart</button>
+                    </div>
+                </div>
+                
+                <!-- Add more product cards as needed -->
+            </div>
+        </div>
+    </section>
+</body>
+</html>

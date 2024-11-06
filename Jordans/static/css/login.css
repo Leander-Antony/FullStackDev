@@ -1,0 +1,65 @@
+/* styles.css */
+
+body {
+    background-color: #121212; /* Dark background color */
+    color: #ffffff; /* White text color */
+    font-family: Arial, sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh; /* Full viewport height */
+    margin: 0;
+}
+
+.container {
+    background-color: #1f1f1f; /* Darker box for the login form */
+    padding: 30px;
+    border-radius: 8px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5);
+    width: 300px; /* Fixed width for the box */
+    text-align: center;
+}
+
+h2 {
+    margin-bottom: 20px; /* Space below the heading */
+}
+
+input[type="text"],
+input[type="password"] {
+    width: 100%; /* Full width */
+    padding: 10px;
+    margin: 10px 0; /* Space between fields */
+    border: none; /* No border */
+    border-radius: 4px; /* Rounded corners */
+    background-color: #2a2a2a; /* Darker input background */
+    color: #ffffff; /* White text */
+}
+
+input[type="submit"] {
+    background-color: #e63946; /* Button color */
+    color: #ffffff; /* White text */
+    border: none; /* No border */
+    border-radius: 4px; /* Rounded corners */
+    padding: 10px;
+    cursor: pointer; /* Pointer on hover */
+    transition: background-color 0.3s ease; /* Smooth transition */
+    width: 100%; /* Full width */
+}
+
+input[type="submit"]:hover {
+    background-color: #d62839; /* Darker shade on hover */
+}
+
+p {
+    margin-top: 20px; /* Space above paragraph */
+    color: #ffffff; /* White text for the paragraph */
+}
+
+a {
+    color: #ffffff; /* White link color */
+    text-decoration: none; /* No underline */
+}
+
+a:hover {
+    text-decoration: underline; /* Underline on hover */
+}
