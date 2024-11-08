@@ -5,8 +5,7 @@
     font-family: Arial, sans-serif;
 }
 
-body {
-    background-image: url('men.jpeg');
+body img{
     background-size: cover; /* Maintain aspect ratio without distortion */
     background-position: center; /* Center the image */
     background-repeat: no-repeat; /* Do not repeat the image */

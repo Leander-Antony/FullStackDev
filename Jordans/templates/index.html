@@ -7,6 +7,316 @@
     <title>Jordan Clone - Hero Section</title>
     <!-- Link to the CSS file -->
     <link rel="stylesheet" type="text/css" href="{% static 'css/styles.css' %}">
+    <style>
+
+/* Products Section */
+.products {
+    width: 100%;
+    padding: 60px 20px;
+}
+
+.products h2 {
+    text-align: center;
+    margin-bottom: 40px;
+    font-size: 2.5rem;
+    color: #e0e0e0;
+}
+
+.product-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr); /* Creates a 2-column layout */
+    gap: 20px;
+}
+
+.product-card {
+    height: auto;
+    padding: 10px;
+    background-color: #2c2c2c;
+    border-radius: 8px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.5);
+    overflow: hidden;
+    text-align: center;
+    transition: transform 0.3s;
+}
+
+.product-card:hover {
+    transform: scale(1.05);
+}
+
+.product-card img {
+    width: 80%; /* Full width of the card */
+    height: 200px; /* Fixed height for the images */
+    object-fit: cover; /* Ensures the image covers the space without distortion */
+}
+
+.product-card h3 {
+    font-size: 1.5rem;
+    margin: 15px 0;
+    color: #e0e0e0;
+}
+
+.product-card p {
+    font-size: 1.25rem;
+    color: #e63946;
+    margin-bottom: 15px;
+}
+
+.buy-button {
+    background-color: #e63946;
+    color: #fff;
+    padding: 10px 20px;
+    text-decoration: none;
+    border-radius: 5px;
+    transition: background-color 0.3s;
+}
+
+.buy-button:hover {
+    background-color: #d62839;
+}
+
+/* Responsive Design for Smaller Screens */
+@media (max-width: 768px) {
+    .product-grid {
+        grid-template-columns: 1fr; /* Stacks the products vertically on smaller screens */
+    }
+
+    .product-card img {
+        height: 150px; /* Adjust image height on smaller screens */
+    }
+}
+       
+        /* Categories Section */
+.categories {
+    padding: 50px 0;
+}
+
+.category-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr); /* Creates 3 equal-width columns */
+    gap: 20px; /* Space between the cards */
+    justify-items: center; /* Centers the items horizontally */
+}
+
+.category-card {
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    padding: 20px;
+}
+
+.category-card img {
+    width: 250px;
+    height: 300px;
+    border-radius: 4px;
+}
+
+.category-card h3 {
+    font-size: 1.5rem;
+    margin: 10px 0;
+}
+
+.category-card p {
+    font-size: 1rem;
+    margin-bottom: 15px;
+}
+
+.view-button {
+    background-color: #e63946;
+    color: white;
+    padding: 10px 20px;
+    text-decoration: none;
+    border-radius: 4px;
+    font-weight: bold;
+}
+
+.view-button:hover {
+    background-color: #d62839;
+}
+
+/* Responsive Design for Smaller Screens */
+@media (max-width: 768px) {
+    .category-grid {
+        grid-template-columns: 1fr; /* Stacks the cards vertically on smaller screens */
+    }
+}
+/* About Section */
+.about {
+    padding: 60px 20px;
+    background-color: #f1f1f1;
+    text-align: center;
+}
+
+.about h2 {
+    font-size: 2.5rem;
+    color: #333;
+    margin-bottom: 40px;
+}
+
+.container-about {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr); /* 2-column layout */
+    gap: 30px;
+    justify-items: center;
+}
+
+.about-card {
+    background-color: #2c2c2c;
+    color: #fff;
+    padding: 30px;
+    border-radius: 8px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+    transition: transform 0.3s;
+    text-align: left;
+    max-width: 400px;
+    width: 100%;
+}
+
+.about-card:hover {
+    transform: scale(1.05);
+}
+
+.about-card h3 {
+    font-size: 2rem;
+    margin-bottom: 15px;
+    color: #e0e0e0;
+}
+p{
+    opacity: 100;
+}
+.about-card p {
+    font-size: 1.1rem;
+    margin-bottom: 20px;
+}
+
+.cta-button {
+    background-color: #e63946;
+    color: #fff;
+    padding: 12px 20px;
+    text-decoration: none;
+    border-radius: 5px;
+    transition: background-color 0.3s;
+}
+
+.cta-button:hover {
+    background-color: #d62839;
+}
+
+/* Customer Reviews Section */
+#reviews {
+    padding: 60px 20px;
+    background-color: #f9f9f9;
+    text-align: center;
+}
+
+#reviews h2 {
+    font-size: 2.5rem;
+    color: #333;
+    margin-bottom: 40px;
+}
+
+.review-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr); /* 3-column layout */
+    gap: 20px;
+}
+
+.review-card {
+    background-color: #2c2c2c;
+    color: #fff;
+    padding: 25px;
+    border-radius: 8px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+    transition: transform 0.3s;
+}
+
+.review-card:hover {
+    transform: scale(1.05);
+}
+
+.review-card p {
+    font-size: 1.1rem;
+    color: #ffffff; /* Stronger contrast with white text */
+    margin-bottom: 15px;
+}
+
+.review-card h4 {
+    font-size: 1.2rem;
+    color: #e63946;
+}
+
+/* Footer Section */
+footer {
+    background-color: #333;
+    color: #fff;
+    padding: 40px 20px;
+    text-align: center;
+}
+
+footer .container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.footer-links a {
+    color: #fff;
+    text-decoration: none;
+    margin: 0 15px;
+    font-size: 1.1rem;
+    transition: color 0.3s;
+}
+
+.footer-links a:hover {
+    color: #e63946;
+}
+
+.social-media a {
+    color: #fff;
+    text-decoration: none;
+    margin: 0 15px;
+    font-size: 1.2rem;
+    transition: color 0.3s;
+}
+
+.social-media a:hover {
+    color: #e63946;
+}
+
+footer p {
+    font-size: 1rem;
+    margin-top: 20px;
+    color: #ccc;
+}
+
+/* Responsive Design for Smaller Screens */
+@media (max-width: 768px) {
+    .container-about {
+        grid-template-columns: 1fr; /* Stack the about cards on smaller screens */
+    }
+
+    .review-grid {
+        grid-template-columns: 1fr 1fr; /* Stack the reviews in 2 columns on smaller screens */
+    }
+
+    .footer-links {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .social-media {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+}
+
+
+
+    </style>
 </head>
 <body>
     <nav class="navbar">
@@ -71,19 +381,19 @@
                     <img src="{% static 'img/men.jpg' %}" alt="Men's Clothing">
                     <h3>Men</h3>
                     <p>Explore our men's collection.</p>
-                    <a href="men.html" class="view-button">View Collection</a>
+                    <a href="{% url 'men' %}" class="view-button">View Collection</a>
                 </div>
                 <div class="category-card">
                     <img src="{% static 'img/women.jpg' %}" alt="Women's Clothing">
                     <h3>Women</h3>
                     <p>Discover our women's styles.</p>
-                    <a href="women.html" class="view-button">View Collection</a>
+                    <a href="{% url 'women' %}" class="view-button">View Collection</a>
                 </div>
                 <div class="category-card">
                     <img src="{% static 'img/kids.jpg' %}" alt="Kids' Clothing">
                     <h3>Kids</h3>
                     <p>Check out our kids' range.</p>
-                    <a href="kids.html" class="view-button">View Collection</a>
+                    <a href="{% url 'kids' %}" class="view-button">View Collection</a>
                 </div>
             </div>
         </div>

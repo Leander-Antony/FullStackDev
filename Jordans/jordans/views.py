@@ -6,6 +6,14 @@ from django.contrib import messages
 def home(request):
     return render(request, 'index.html')
 
+def men(request):
+    return render(request, 'men.html')
+
+def women(request):
+    return render(request, 'women.html')
+
+def kids(request):
+    return render(request, 'kids.html')
 
 def register(request):
     if request.method == 'POST':
