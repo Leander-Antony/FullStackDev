@@ -1,0 +1,66 @@
+/* General Styles */
+body {
+    font-family: Arial, sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+    background-color: #f0f0f0;
+}
+
+/* Book Container */
+.book-container {
+    perspective: 1500px;
+}
+
+.book {
+    width: 300px;
+    height: 400px;
+    position: relative;
+    transform-style: preserve-3d;
+    transition: transform 1s;
+}
+
+/* Book Pages */
+.page {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background-color: white;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+    backface-visibility: hidden;
+}
+
+/* Front and Back Pages */
+.front {
+    transform: rotateY(0deg);
+    background-color: lightblue;
+}
+
+.back {
+    transform: rotateY(180deg);
+    background-color: lightgreen;
+}
+
+/* Button */
+button {
+    margin-top: 20px;
+    padding: 10px 20px;
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+    cursor: pointer;
+    border-radius: 5px;
+    font-size: 16px;
+}
+
+button:hover {
+    background-color: #45a049;
+}
+
+
+/* When the page turns */
+.book.turn {
+    transform: rotateY(-180deg);
+}
