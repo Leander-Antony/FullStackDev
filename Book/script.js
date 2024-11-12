@@ -1,7 +1,11 @@
-let turnButton = document.getElementById('turnPageBtn');
 let book = document.querySelector('.book');
 
-turnButton.addEventListener('click', () => {
-    // Add or remove a class that triggers the page turn
-    book.classList.toggle('turn');
+// Trigger the page turn on hover
+book.addEventListener('mouseenter', () => {
+    book.classList.add('turn');
+});
+
+// Reset the page back when mouse leaves
+book.addEventListener('mouseleave', () => {
+    book.classList.remove('turn');
 });
