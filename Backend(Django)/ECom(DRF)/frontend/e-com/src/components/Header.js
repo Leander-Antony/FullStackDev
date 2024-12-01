@@ -25,7 +25,7 @@ function Header() {
           <ul className="navbar-nav me-auto">
             <li className="nav-item">
               <LinkContainer to="/">
-                <Nav.Link className="navbar-link active">Home</Nav.Link>
+                <Nav.Link className="navbar-link active">Home <i className="fa-solid fa-house"></i></Nav.Link>
               </LinkContainer>
               <span className="visually-hidden">(current)</span>
             </li>
